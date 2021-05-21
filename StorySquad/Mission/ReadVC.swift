@@ -196,6 +196,21 @@ class ReadVC: UIViewController {
       configureUI()
     }
    
+   override var preferredStatusBarStyle: UIStatusBarStyle {
+       return .lightContent
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      self.tabBarController?.tabBar.isHidden = true
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      self.tabBarController?.tabBar.isHidden = false
+   }
+   
+   
    @objc func handleAwesomeButton() {
       let rootVC = DrawVC()
       navigationController?.pushViewController(rootVC, animated: true)

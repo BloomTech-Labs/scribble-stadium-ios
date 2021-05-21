@@ -49,6 +49,7 @@
 		46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4E624C98D8900FE0CD1 /* Notifications.swift */; };
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
+		862F64DD2657521F001E811E /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F64DC2657521F001E811E /* WriteVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		46BEB4E624C98D8900FE0CD1 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
+		862F64DC2657521F001E811E /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				1AADE4522656FAC7007F42C5 /* MissionVC.swift */,
 				1AADE45F2656FB5D007F42C5 /* ReadVC.swift */,
 				1AADE4612656FB62007F42C5 /* DrawVC.swift */,
+				862F64DC2657521F001E811E /* WriteVC.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				1AADE46E2656FCA0007F42C5 /* ParentRepresentation.swift in Sources */,
 				1AADE44B2656F905007F42C5 /* UIView+Constraint.swift in Sources */,
 				1AADE4662656FC7B007F42C5 /* Child+Convenience.swift in Sources */,
+				862F64DD2657521F001E811E /* WriteVC.swift in Sources */,
 				1AADE46C2656FC99007F42C5 /* Parent+Convenience.swift in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				1AADE45E2656FB53007F42C5 /* SettingsVC.swift in Sources */,
