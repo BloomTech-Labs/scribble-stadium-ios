@@ -64,12 +64,16 @@ class MissionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = UIColor.tabbarColor
-      navigationItem.title = "Accept the Mission"
+      navigationItem.title = "Mission"
       self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Bangers", size: 20)!]
       
       
       configureUI()
-    }
+    }//
+   
+   
+
+   
    
    @objc func handleMissionButton() {
       let rootVC = ReadVC()
@@ -124,6 +128,11 @@ class MissionVC: UIViewController {
       )
       
    }// setup
+   
+   
+   override var preferredStatusBarStyle: UIStatusBarStyle {
+      return .default
+   }
 
 
 }// Class
