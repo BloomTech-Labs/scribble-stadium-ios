@@ -40,6 +40,8 @@
 		1AADE46A2656FC93007F42C5 /* ChildRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE4692656FC93007F42C5 /* ChildRepresentation.swift */; };
 		1AADE46C2656FC99007F42C5 /* Parent+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */; };
 		1AADE46E2656FCA0007F42C5 /* ParentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */; };
+		445676E926574E5400DC9662 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445676E826574E5400DC9662 /* CoreDataStack.swift */; };
+		445676EC26574E8500DC9662 /* StorySquad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 445676EA26574E8500DC9662 /* StorySquad.xcdatamodeld */; };
 		466C4274249A8748007D033E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C4273249A8748007D033E /* AppDelegate.swift */; };
 		466C4276249A8748007D033E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C4275249A8748007D033E /* SceneDelegate.swift */; };
 		466C427D249A8749007D033E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466C427C249A8749007D033E /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 		1AADE4692656FC93007F42C5 /* ChildRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildRepresentation.swift; sourceTree = "<group>"; };
 		1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parent+Convenience.swift"; sourceTree = "<group>"; };
 		1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentRepresentation.swift; sourceTree = "<group>"; };
+		445676E826574E5400DC9662 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		445676EB26574E8500DC9662 /* StorySquad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorySquad.xcdatamodel; sourceTree = "<group>"; };
 		466C4270249A8748007D033E /* StorySquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorySquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466C4273249A8748007D033E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		466C4275249A8748007D033E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				1AADE44C2656F930007F42C5 /* CustomUI */,
+				445676E826574E5400DC9662 /* CoreDataStack.swift */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
 				46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */,
 				1AADE44A2656F905007F42C5 /* UIView+Constraint.swift */,
@@ -259,6 +264,7 @@
 				1AADE4692656FC93007F42C5 /* ChildRepresentation.swift */,
 				1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */,
 				1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */,
+				445676EA26574E8500DC9662 /* StorySquad.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				1AADE4642656FC6F007F42C5 /* Bearer.swift in Sources */,
 				1AADE4622656FB62007F42C5 /* DrawVC.swift in Sources */,
+				445676EC26574E8500DC9662 /* StorySquad.xcdatamodeld in Sources */,
 				1AADE4532656FAC7007F42C5 /* MissionVC.swift in Sources */,
 				1AADE44E2656F93E007F42C5 /* Colors.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
@@ -409,6 +416,7 @@
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
 				1AADE4682656FC8C007F42C5 /* ChildInParentRepresentation.swift in Sources */,
 				1AADE4582656FB0E007F42C5 /* LoginVC.swift in Sources */,
+				445676E926574E5400DC9662 /* CoreDataStack.swift in Sources */,
 				46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */,
 				1AADE4602656FB5D007F42C5 /* ReadVC.swift in Sources */,
 				1AADE46E2656FCA0007F42C5 /* ParentRepresentation.swift in Sources */,
@@ -631,6 +639,19 @@
 			productName = OktaAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		445676EA26574E8500DC9662 /* StorySquad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				445676EB26574E8500DC9662 /* StorySquad.xcdatamodel */,
+			);
+			currentVersion = 445676EB26574E8500DC9662 /* StorySquad.xcdatamodel */;
+			path = StorySquad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 466C4268249A8748007D033E /* Project object */;
 }
