@@ -86,7 +86,7 @@ class LoginVC: UIViewController {
       let button = UIButton()
 //      button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
       button.setTitleColor(.white, for: .normal)
-      button.setTitle("NEXT", for: .normal)
+      button.setTitle("Log In", for: .normal)
       button.titleLabel?.font =  UIFont(name: "Mulish", size: 15.0)
       button.backgroundColor = UIColor.tabbarColor
       button.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
@@ -114,7 +114,9 @@ class LoginVC: UIViewController {
    
    
    @objc func handleLoginButton() {
-      
+//    Uncomment to access Okta Login Page
+//    UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
+
       let modal = MainTabbarVC()
       modal.modalPresentationStyle = .fullScreen
       present(modal, animated: true, completion: nil)
@@ -122,6 +124,7 @@ class LoginVC: UIViewController {
       
 //      let rootVC = MissionVC()
 //      navigationController?.pushViewController(rootVC, animated: true)
+//
    }
    
    
