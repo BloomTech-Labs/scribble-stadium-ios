@@ -13,53 +13,29 @@ class MissionVC: UIViewController {
    // Outlets
    let backView = UIView()
    
-   let topView = UIView()
+   let missionImage: UIImageView = {
+      let image = UIImageView()
+      image.image = UIImage(named: "LetsPlayImage")
+      image.contentMode = .scaleAspectFill
+      image.layer.borderColor = UIColor.borderTwoColor?.cgColor
+      image.layer.borderWidth = 7
+      return image
+   }()
    
    let missionButton: UIButton = {
       let button = UIButton()
-//      button.setTitle(" ACCEPT \n THE MISSION ", for: .normal)
-//      button.titleLabel?.textAlignment = NSTextAlignment.center
-//      button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-//      button.setTitleColor(UIColor.tabbarColor, for: .normal)
-//      button.titleLabel?.font =  UIFont(name: "Bangers", size: 42)
-      button.setImage(UIImage(named: "acceptMission-1"), for: UIControl.State.normal)
-      button.addTarget(self, action: #selector(handleMissionButton), for: .touchUpInside)
-      button.backgroundColor = UIColor.readColor
-      return button
-   }()
-   
-   
-   let middleView = UIView()
-   
-   let leaderboardButton: UIButton = {
-      let button = UIButton()
-      button.setTitle(" LEADERBOARD ", for: .normal)
-      button.setTitleColor(UIColor.borderColor, for: .normal)
-      button.titleLabel?.font =  UIFont(name: "Bangers", size: 28)
-      button.backgroundColor = UIColor.drawColor
-      return button
-   }()
-   
-   let bottomView = UIView()
-   
-   let galleryButton: UIButton = {
-      let button = UIButton()
-      button.setTitle(" STORY AND DRAWING \n GALLERY ", for: .normal)
+      button.setTitle(" Let's play! ", for: .normal)
       button.titleLabel?.textAlignment = NSTextAlignment.center
-      button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-      button.setTitleColor(UIColor.borderColor, for: .normal)
-      button.titleLabel?.font =  UIFont(name: "Bangers", size: 28)
-      button.backgroundColor = UIColor.writeColor
+      button.setTitleColor(UIColor.tabbarColor, for: .normal)
+      button.titleLabel?.font =  UIFont(name: "Atma", size: 32)
+      button.addTarget(self, action: #selector(handleMissionButton), for: .touchUpInside)
+      button.backgroundColor = UIColor.aquaColor
       return button
    }()
    
-   lazy var mainStackView: UIStackView = {
-      let stackView = UIStackView()
-      stackView.distribution = .fillEqually
-      stackView.spacing = 40
-      stackView.axis = .vertical
-      return stackView
-   }()
+
+   
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,10 +58,6 @@ class MissionVC: UIViewController {
    
    
    
-   
-   
-   
-    
 
    func configureUI() {
       view.addSubviewsUsingAutolayout(backView)
@@ -93,39 +65,22 @@ class MissionVC: UIViewController {
    }//
    
    func setupBackView() {
-      backView.addSubviewsUsingAutolayout(mainStackView)
+      backView.addSubviewsUsingAutolayout(missionImage, missionButton)
       backView.anchor(
          top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor
       )
       backView.backgroundColor = UIColor.tabbarColor
       
-      mainStackView.addArrangedSubview(topView)
-      mainStackView.addArrangedSubview(middleView)
-      mainStackView.addArrangedSubview(bottomView)
-      mainStackView.anchor(
-         top: backView.topAnchor, leading: backView.leadingAnchor, trailing: backView.trailingAnchor, bottom: backView.bottomAnchor, padding: .init(top: 40, left: 0, bottom: -40, right: 0)
+      missionImage.anchor(
+         top: backView.topAnchor, leading: backView.leadingAnchor, trailing: backView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0)
       )
+
       
-      topView.addSubviewsUsingAutolayout(missionButton)
-      topView.layer.borderWidth = 7
-      topView.layer.borderColor = UIColor.borderColor?.cgColor
       missionButton.anchor(
-         top: topView.topAnchor, leading: topView.leadingAnchor, trailing: topView.trailingAnchor, bottom: topView.bottomAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0)
+         top: missionImage.bottomAnchor, leading: backView.leadingAnchor, trailing: backView.trailingAnchor, bottom: backView.bottomAnchor, padding: .init(top: 20, left: 50, bottom: -20, right: -50), size: .init(width: backView.frame.width, height: 60)
       )
-      
-      middleView.addSubviewsUsingAutolayout(leaderboardButton)
-      middleView.layer.borderWidth = 7
-      middleView.layer.borderColor = UIColor.borderColor?.cgColor
-      leaderboardButton.anchor(
-         top: middleView.topAnchor, leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: middleView.bottomAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0)
-      )
-      
-      bottomView.addSubviewsUsingAutolayout(galleryButton)
-      bottomView.layer.borderWidth = 7
-      bottomView.layer.borderColor = UIColor.borderColor?.cgColor
-      galleryButton.anchor(
-         top: bottomView.topAnchor, leading: bottomView.leadingAnchor, trailing: bottomView.trailingAnchor, bottom: bottomView.bottomAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0)
-      )
+      missionButton.layer.cornerRadius = 10
+      missionButton.clipsToBounds = true
       
    }// setup
    

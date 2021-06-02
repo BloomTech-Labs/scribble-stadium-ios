@@ -20,6 +20,8 @@ extension UIColor {
    
    static let borderColor = UIColor(named: "BorderColor")
    
+   static let borderTwoColor = UIColor(named: "BorderTwoColor")
+   
    static let readColor = UIColor(named: "ReadColor")
    
    static let drawColor = UIColor(named: "DrawColor")
