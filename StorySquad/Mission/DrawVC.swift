@@ -350,10 +350,36 @@ class DrawVC: UIViewController {
    
    
    @objc func handleCameraPhotoButton() {
+    let photoPicker = UIImagePickerController()
       let rootVC = WriteVC()
       navigationController?.pushViewController(rootVC, animated: true)
 //      present(rootVC, animated: true, completion: nil)
+    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        photoPicker.allowsEditing = false
+        photoPicker.sourceType = UIImagePickerController.SourceType.camera
+        photoPicker.cameraCaptureMode = .photo
+        photoPicker.modalPresentationStyle = .fullScreen
+        present(photoPicker, animated: true, completion: nil)
+    } else {
+        noCamera()
+    }
    }//
+    
+    func noCamera() {
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device has no camera",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true,
+            completion: nil)
+    }
    
    @objc func handleDeleteButton() {
       image = nil
