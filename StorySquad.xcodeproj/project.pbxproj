@@ -52,6 +52,7 @@
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		862F64DD2657521F001E811E /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F64DC2657521F001E811E /* WriteVC.swift */; };
+		CAA429D726686F5D00FE0C3E /* SotoS3 in Frameworks */ = {isa = PBXBuildFile; productRef = CAA429D626686F5D00FE0C3E /* SotoS3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46908EB62513C971003252BA /* OktaAuth in Frameworks */,
+				CAA429D726686F5D00FE0C3E /* SotoS3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +310,7 @@
 			name = StorySquad;
 			packageProductDependencies = (
 				46908EB52513C971003252BA /* OktaAuth */,
+				CAA429D626686F5D00FE0C3E /* SotoS3 */,
 			);
 			productName = LabsScaffolding;
 			productReference = 466C4270249A8748007D033E /* StorySquad.app */;
@@ -339,6 +342,7 @@
 			mainGroup = 466C4267249A8748007D033E;
 			packageReferences = (
 				46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */,
+				CAA429D526686F5C00FE0C3E /* XCRemoteSwiftPackageReference "aws-sdk-swift" */,
 			);
 			productRefGroup = 466C4271249A8748007D033E /* Products */;
 			projectDirPath = "";
@@ -634,6 +638,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		CAA429D526686F5C00FE0C3E /* XCRemoteSwiftPackageReference "aws-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-aws/aws-sdk-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */;
 			productName = OktaAuth;
+		};
+		CAA429D626686F5D00FE0C3E /* SotoS3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA429D526686F5C00FE0C3E /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
+			productName = SotoS3;
 		};
 /* End XCSwiftPackageProductDependency section */
 
