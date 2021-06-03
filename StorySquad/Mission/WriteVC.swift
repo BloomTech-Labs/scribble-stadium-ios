@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VisionKit
 
 class WriteVC: UIViewController {
    
@@ -234,7 +235,7 @@ class WriteVC: UIViewController {
    
    let uploadStoryButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Upload Drawing", for: .normal)
+      button.setTitle("Upload Writing", for: .normal)
       button.setTitleColor(UIColor.borderTwoColor, for: .normal)
       button.titleLabel?.font = UIFont(name: "Atma-Medium", size: 20.0)
       button.backgroundColor = UIColor.aquaColor
@@ -277,11 +278,19 @@ class WriteVC: UIViewController {
     
    
 //MARK: This function when click should open the Scanner Photo
-   
+    
+    //Configure the scanner view
+   private func configureDocumentView() {
+        
+        let scanningDocumentVC = VNDocumentCameraViewController()
+        scanningDocumentVC.delegate = self
+        self.present(scanningDocumentVC, animated: true, completion: nil)
+    }
    @objc func handlePhotoLibraryButton() {
       bottomView.isHidden = true
       bottomAlertView.isHidden = true
       bottomPicturesView.isHidden = false
+      configureDocumentView()
       
    }//
    
@@ -513,6 +522,24 @@ extension WriteVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
    }
    
 }//
+
+extension WriteVC: VNDocumentCameraViewControllerDelegate {
+    func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
+        
+        for pageNumber in 0..<scan.pageCount {
+            let image = scan.imageOfPage(at: pageNumber)
+            
+            print(image)
+            //Assign scam document <image> to collection view data source
+            // below assigns to UIImageView i used in previous project
+            //scanImageView.image = image
+            
+            
+        }
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
 
 class CustomCell: UICollectionViewCell {
    

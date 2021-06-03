@@ -59,8 +59,8 @@ class DrawVC: UIViewController {
       return button
    }()
    
-   
-   // NOTE: The delete button is here in case they decide to have a button to delete and send the user back to the camera view
+    
+    // NOTE: The delete button is here in case they decide to have a button to delete and send the user back to the camera view
    
 //   let deleteButton: UIButton = {
 //      let button = UIButton()
@@ -183,7 +183,6 @@ class DrawVC: UIViewController {
       button.addTarget(self, action: #selector(handleUploadDrawingButton), for: .touchUpInside)
       return button
    }()
-   
    
    // Bottom AlertView
    
@@ -407,7 +406,9 @@ class DrawVC: UIViewController {
    
    @objc func handlePhotoSubmitButton() {
       let rootVC = WriteVC()
-      navigationController?.pushViewController(rootVC, animated: true)
+      //navigationController?.pushViewController(rootVC, animated: true)
+    self.present(rootVC, animated: true, completion: nil)
+        print("submit")
    }
    
 
