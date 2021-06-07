@@ -52,6 +52,10 @@
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		862F64DD2657521F001E811E /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F64DC2657521F001E811E /* WriteVC.swift */; };
+		CAA42A1E266EC08700FE0C3E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA42A1D266EC08700FE0C3E /* HTTPMethod.swift */; };
+		CAA42A21266EC0C300FE0C3E /* SubmissionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA42A20266EC0C300FE0C3E /* SubmissionsAPI.swift */; };
+		CAA42A25266EC11100FE0C3E /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA42A24266EC11100FE0C3E /* Page.swift */; };
+		CAA42A29266EC1FC00FE0C3E /* ChildSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA42A28266EC1FC00FE0C3E /* ChildSubmission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +106,10 @@
 		46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		862F64DC2657521F001E811E /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
+		CAA42A1D266EC08700FE0C3E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		CAA42A20266EC0C300FE0C3E /* SubmissionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsAPI.swift; sourceTree = "<group>"; };
+		CAA42A24266EC11100FE0C3E /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		CAA42A28266EC1FC00FE0C3E /* ChildSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSubmission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +236,7 @@
 		466C4272249A8748007D033E /* StorySquad */ = {
 			isa = PBXGroup;
 			children = (
+				CAA42A20266EC0C300FE0C3E /* SubmissionsAPI.swift */,
 				46BEB4EB24C98EB400FE0CD1 /* Model */,
 				46BEB4EC24C98EBB00FE0CD1 /* ModelController */,
 				1AADE44F2656FA95007F42C5 /* Mission */,
@@ -248,6 +257,7 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CAA42A1D266EC08700FE0C3E /* HTTPMethod.swift */,
 				1AADE44C2656F930007F42C5 /* CustomUI */,
 				445676E826574E5400DC9662 /* CoreDataStack.swift */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
@@ -268,6 +278,8 @@
 				1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */,
 				1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */,
 				445676EA26574E8500DC9662 /* StorySquad.xcdatamodeld */,
+				CAA42A24266EC11100FE0C3E /* Page.swift */,
+				CAA42A28266EC1FC00FE0C3E /* ChildSubmission.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,11 +419,13 @@
 				1AADE46A2656FC93007F42C5 /* ChildRepresentation.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				1AADE4642656FC6F007F42C5 /* Bearer.swift in Sources */,
+				CAA42A21266EC0C300FE0C3E /* SubmissionsAPI.swift in Sources */,
 				1AADE4622656FB62007F42C5 /* DrawVC.swift in Sources */,
 				445676EC26574E8500DC9662 /* StorySquad.xcdatamodeld in Sources */,
 				1AADE4532656FAC7007F42C5 /* MissionVC.swift in Sources */,
 				1AADE44E2656F93E007F42C5 /* Colors.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
+				CAA42A29266EC1FC00FE0C3E /* ChildSubmission.swift in Sources */,
 				1AADE45B2656FB34007F42C5 /* GalleryVC.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				1AADE4212656E269007F42C5 /* Profile.swift in Sources */,
@@ -424,8 +438,10 @@
 				1AADE4602656FB5D007F42C5 /* ReadVC.swift in Sources */,
 				1AADE46E2656FCA0007F42C5 /* ParentRepresentation.swift in Sources */,
 				1AADE44B2656F905007F42C5 /* UIView+Constraint.swift in Sources */,
+				CAA42A25266EC11100FE0C3E /* Page.swift in Sources */,
 				1AADE4662656FC7B007F42C5 /* Child+Convenience.swift in Sources */,
 				862F64DD2657521F001E811E /* WriteVC.swift in Sources */,
+				CAA42A1E266EC08700FE0C3E /* HTTPMethod.swift in Sources */,
 				1AADE46C2656FC99007F42C5 /* Parent+Convenience.swift in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				1AADE45E2656FB53007F42C5 /* SettingsVC.swift in Sources */,
