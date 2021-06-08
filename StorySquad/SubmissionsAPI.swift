@@ -235,7 +235,7 @@ class SubmissionsAPI {
             }
             
             do {
-              //TODO: - Get Submissions
+                //TODO: - Get Submissions
             } catch {
                 NSLog("Error decoding submission: \(error)")
                 completion(.failure(.badDecode))
@@ -272,7 +272,7 @@ class SubmissionsAPI {
             }
             
             do {
-             
+                
             } catch {
                 NSLog("Error decoding submission: \(error)")
                 completion(.failure(.badDecode))
@@ -309,7 +309,7 @@ class SubmissionsAPI {
             }
             
             do {
-              
+                
             } catch {
                 NSLog("Error decoding submission: \(error)")
                 completion(.failure(.badDecode))

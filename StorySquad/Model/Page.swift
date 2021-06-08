@@ -11,7 +11,7 @@ import Foundation
 struct Page: Codable {
     let id: Int
     let url: String
-    let submissionId: Int
+    let submissionId: Int?
     let pageNum: Int
     
     enum CodingKeys: String, CodingKey {

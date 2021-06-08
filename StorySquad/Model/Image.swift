@@ -9,13 +9,6 @@
 import Foundation
 
 struct Image: Codable {
-    init(from decoder: Decoder) throws {
-        <#code#>
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        <#code#>
-    }
 
     let id: Int
     let url: String
