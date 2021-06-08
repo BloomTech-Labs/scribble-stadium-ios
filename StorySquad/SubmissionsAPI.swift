@@ -95,9 +95,12 @@ class SubmissionsAPI {
             }
             
             do {
-                
+                let childSubmission = try JSONDecoder().decode(ChildSubmission.self, from: data)
+                print(childSubmission)
+                // TODO: Do something with decoded object
             } catch {
-                
+                NSLog("Error decoding child submission: \(error)")
+                completion(.failure(.badDecode))
             }
         }.resume()
     }
@@ -144,7 +147,7 @@ class SubmissionsAPI {
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 204 {
                     print("Good response")
-                    //  completion(.success(page))
+                    completion(.success("Page submitted"))
                     return
                 } else {
                     print("Bad response, code: \(response.statusCode)")
@@ -153,10 +156,25 @@ class SubmissionsAPI {
                 }
             }
             
-            let jsonData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            let jsonData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
             if let json = jsonData as? [String: Any] {
                 print(json)
             }
+            
+            do {
+                let page = try JSONDecoder().decode(Page.self, from: data)
+                print(page)
+                // TODO: Do something with decoded object
+            } catch {
+                NSLog("Error decoding page: \(error)")
+                completion(.failure(.badDecode))
+            }
+            
         }.resume()
     }
     
@@ -199,10 +217,37 @@ class SubmissionsAPI {
                 return
             }
             
-            let jsonData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 201 {
+                    print("Good response")
+                    completion(.success("Image submitted"))
+                    return
+                } else {
+                    print("Bad response, code: \(response.statusCode)")
+                    completion(.failure(.unexpectedStatusCode(response.statusCode)))
+                    return
+                }
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            let jsonData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
             if let json = jsonData as? [String: Any] {
                 print(json)
             }
+            
+            do {
+                let image = try JSONDecoder().decode(Image.self, from: data)
+                print(image)
+                // TODO: Do something with decoded object
+            } catch {
+                NSLog("Error decoding image: \(error)")
+                completion(.failure(.badDecode))
+            }
+            
         }.resume()
     }
     
@@ -235,7 +280,8 @@ class SubmissionsAPI {
             }
             
             do {
-                //TODO: - Get Submissions
+                let submission = try JSONDecoder().decode(Submission.self, from: data)
+                print(submission)
             } catch {
                 NSLog("Error decoding submission: \(error)")
                 completion(.failure(.badDecode))
@@ -258,24 +304,23 @@ class SubmissionsAPI {
         request.httpMethod = HTTPMethod.put.rawValue
         request.setValue("\(childBearer.token)", forHTTPHeaderField: HeaderNames.authorization.rawValue)
         
-        URLSession.shared.dataTask(with: requestURL) { data, response, error in
+        URLSession.shared.dataTask(with: requestURL) { _, response, error in
             if let error = error {
                 NSLog("Error getting submissions with: \(error)")
                 completion(.failure(.missingRequiredElement))
                 return
             }
             
-            guard let data = data else {
-                NSLog("No data returned")
-                completion(.failure(.noData))
-                return
-            }
-            
-            do {
-                
-            } catch {
-                NSLog("Error decoding submission: \(error)")
-                completion(.failure(.badDecode))
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 204 {
+                    print("Good response")
+                    completion(.success("Toggled hasRead"))
+                    return
+                } else {
+                    print("Bad response, code: \(response.statusCode)")
+                    completion(.failure(.unexpectedStatusCode(response.statusCode)))
+                    return
+                }
             }
         }.resume()
     }
@@ -295,24 +340,23 @@ class SubmissionsAPI {
         request.httpMethod = HTTPMethod.put.rawValue
         request.setValue("\(childBearer.token)", forHTTPHeaderField: HeaderNames.authorization.rawValue)
         
-        URLSession.shared.dataTask(with: requestURL) { data, response, error in
+        URLSession.shared.dataTask(with: requestURL) { _, response, error in
             if let error = error {
                 NSLog("Error getting submissions with: \(error)")
                 completion(.failure(.missingRequiredElement))
                 return
             }
             
-            guard let data = data else {
-                NSLog("No data returned")
-                completion(.failure(.noData))
-                return
-            }
-            
-            do {
-                
-            } catch {
-                NSLog("Error decoding submission: \(error)")
-                completion(.failure(.badDecode))
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 204 {
+                    print("Good response")
+                    completion(.success("Reset successful"))
+                    return
+                } else {
+                    print("Bad response, code: \(response.statusCode)")
+                    completion(.failure(.unexpectedStatusCode(response.statusCode)))
+                    return
+                }
             }
         }.resume()
     }
@@ -332,11 +376,23 @@ class SubmissionsAPI {
         request.httpMethod = HTTPMethod.delete.rawValue
         request.setValue("\(childBearer.token)", forHTTPHeaderField: HeaderNames.authorization.rawValue)
         
-        URLSession.shared.dataTask(with: requestURL) { _, _, error in
+        URLSession.shared.dataTask(with: requestURL) { _, response, error in
             if let error = error {
                 NSLog("Error getting submissions with: \(error)")
                 completion(.failure(.missingRequiredElement))
                 return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 204 {
+                    print("Good response")
+                    completion(.success("Reset successful"))
+                    return
+                } else {
+                    print("Bad response, code: \(response.statusCode)")
+                    completion(.failure(.unexpectedStatusCode(response.statusCode)))
+                    return
+                }
             }
         }.resume()
     }
