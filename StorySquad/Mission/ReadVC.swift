@@ -16,14 +16,7 @@ class ReadVC: UIViewController {
    let lineView = UIView()
    let bottomView = UIView()
    
-   let titleLabel: UILabel = {
-      let title = UILabel()
-      title.textColor = .white
-      title.text = " YOUR MISSION "
-      title.font = UIFont(name: "Bangers", size: 40.0)
-      title.translatesAutoresizingMaskIntoConstraints = false
-      return title
-   }()
+   let titleLabel = TitleLabel(text: " YOUR MISSION ")
    
    lazy var titleStackView: UIStackView = {
       let stackView = UIStackView()
@@ -41,60 +34,14 @@ class ReadVC: UIViewController {
    let iconMiddle = UIView()
    let iconRight = UIView()
    
-   let iconOne: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "1"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
+   let iconOne = IconLabel(text: "1", textColor: UIColor.tabbarColor!)
+   let iconTwo = IconLabel(text: "2", textColor: UIColor.tabbarColor!)
+   let iconThree = IconLabel(text: "3", textColor: UIColor.tabbarColor!)
    
-   let iconTwo: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "2"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
+   let readLabel = IconTitleLabel(text: "Read", textColor: UIColor.white)
+   let drawLabel = IconTitleLabel(text: "Draw", textColor: UIColor.whiteDarkColor!)
+   let writeLabel = IconTitleLabel(text: "Write", textColor: UIColor.whiteDarkColor!)
    
-   let iconthree: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "3"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   let readLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.white
-      label.text = "Read"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   
-   let drawLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.whiteDarkColor
-      label.text = "Draw"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   let writeLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.whiteDarkColor
-      label.text = "Write"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
    
    
 // Bottom View
@@ -144,12 +91,7 @@ class ReadVC: UIViewController {
    }()
    
    let awesomeButton: UIButton = {
-      let button = UIButton()
-      button.setTitleColor(.gray, for: .normal)
-      button.setTitle("I'm awesome, I'm done reading!", for: .normal)
-      button.titleLabel?.font =  UIFont(name: "Bangers", size: 20.0)
-      button.backgroundColor = UIColor.aquaColor
-      button.translatesAutoresizingMaskIntoConstraints = false
+      let button = ActionButton(title: "I'm awesome, I'm done reading!")
       button.addTarget(self, action: #selector(handleAwesomeButton), for: .touchUpInside)
       return button
    }()
@@ -192,6 +134,7 @@ class ReadVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = UIColor.tabbarColor
+      self.navigationItem.title = "Read"
         
       configureUI()
     }
@@ -346,7 +289,7 @@ class ReadVC: UIViewController {
          top: iconRight.bottomAnchor, centerX: iconRight.centerXAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0)
       )
       
-      iconRight.addSubviewsUsingAutolayout(iconthree)
+      iconRight.addSubviewsUsingAutolayout(iconThree)
       iconRight.anchor(
          top: iconRightView.topAnchor, centerX: iconRightView.centerXAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0), size: .init(width: 40, height: 40)
       )
@@ -354,7 +297,7 @@ class ReadVC: UIViewController {
       iconRight.clipsToBounds = true
       iconRight.backgroundColor = UIColor.thirdYellowColor
       
-      iconthree.anchor(
+      iconThree.anchor(
          centerX: iconRight.centerXAnchor, centerY: iconRight.centerYAnchor
       )
       
@@ -373,8 +316,6 @@ class ReadVC: UIViewController {
       )
       
    }//
-   
-   
    
    
    func configureMainStackView() {
