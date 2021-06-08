@@ -32,72 +32,37 @@ class WriteVC: UIViewController {
    }()
    
    let alertTitle: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = " SCRIBBLE A SIDE\nQUEST! "
-      label.font = UIFont(name: "Bangers", size: 40.0)
-      label.textAlignment = NSTextAlignment.center
+      let label = AlertTitleLabel(text: " SCRIBBLE A SIDE\nQUEST! ")
       label.numberOfLines = 2
-      label.translatesAutoresizingMaskIntoConstraints = false
       return label
    }()
    
-   let alertIntro: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "Grab your favorite pencil and some loose\nleaf sheets of paper. Based on the promt\nat the end of the reading, scribble down a\nside quest by hand. When your story is\ncomplete, snap a photo of your pages and\nupload them. Let's go!."
-      label.font = UIFont(name: "Atma", size: 18.0)
-      label.textAlignment = NSTextAlignment.center
-      label.numberOfLines = 6
-      return label
-   }()
+   let alertIntro = AlertIntroLabel(text: "Grab your favorite pencil and some loose\nleaf sheets of paper. Based on the promt\nat the end of the reading, scribble down a\nside quest by hand. When your story is\ncomplete, snap a photo of your pages and\nupload them. Let's go!.", numberOfLines: 6)
+   
    
    let alertButton: UIButton = {
-      let button = UIButton()
-      button.setTitleColor(UIColor.borderTwoColor, for: .normal)
-      button.setTitle("LET'S GO!", for: .normal)
-      button.titleLabel?.font =  UIFont(name: "Bangers", size: 20.0)
-      button.backgroundColor = UIColor.white
-      button.layer.borderWidth = 3
-      button.layer.borderColor = UIColor.borderTwoColor?.cgColor
-      button.layer.cornerRadius = 10
+      let button = AlertButton(title: "LET'S GO!")
       button.addTarget(self, action: #selector(handleLetsGoButton), for: .touchUpInside)
       return button
    }()
-   
-   
+
    
    
    // Bottom Picture View
    
    let bottomPicturesView = UIView()
    
-   let writeTitle: UILabel = {
-      let label = UILabel()
-      label.textColor = .white
-      label.text = " REMINDER "
-      label.textAlignment = NSTextAlignment.center
-      label.font = UIFont(name: "Bangers", size: 40.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
+   let writeTitle = TitleLabel(text: " REMINDER ")
    
-   let writeIntro: UILabel = {
-      let label = UILabel()
-      label.textColor = .white
-      label.text = "Double check that you're uploading the right\nphoto!"
-      label.font = UIFont(name: "Atma", size: 18.0)
-      label.textAlignment = NSTextAlignment.center
-      label.numberOfLines = 2
-      return label
-   }()
+   let writeIntro = IntroLabel(text: "Double check that you're uploading the right\nphoto!", numberOfLines: 2)
+   
    
    fileprivate let writeCollectionView: UICollectionView = {
       let layout = UICollectionViewFlowLayout()
       layout.scrollDirection = .horizontal
       let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
       cv.translatesAutoresizingMaskIntoConstraints = false
-      cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+//      cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
       return cv
    }()
    
@@ -106,28 +71,18 @@ class WriteVC: UIViewController {
 //      image.contentMode = .scaleAspectFill
 //      return image
 //   }()
-   
+  
    let uploadWriteButton: UIButton = {
-      let button = UIButton()
-      button.setTitleColor(.gray, for: .normal)
-      button.setTitle("Upload now", for: .normal)
-      button.titleLabel?.font =  UIFont(name: "Atma-Medium", size: 20.0)
-      button.backgroundColor = UIColor.aquaColor
-      button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30)
+      let button = ActionButton(title: "Upload now")
       button.addTarget(self, action: #selector(handleUplaodNowButton), for: .touchUpInside)
       return button
    }()
    
    
    // Top View
-   let titleLabel: UILabel = {
-      let title = UILabel()
-      title.textColor = .white
-      title.text = " YOUR MISSION "
-      title.font = UIFont(name: "Bangers", size: 40.0)
-      title.translatesAutoresizingMaskIntoConstraints = false
-      return title
-   }()
+   
+   let titleLabel = TitleLabel(text: " YOUR MISSION ")
+   
    
    // Middle View
    
@@ -147,84 +102,21 @@ class WriteVC: UIViewController {
    let iconMiddle = UIView()
    let iconRight = UIView()
    
-   let iconOne: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "1"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
+   let iconOne = IconLabel(text: "1", textColor: UIColor.tabbarColor!)
+   let iconTwo = IconLabel(text: "2", textColor: UIColor.tabbarColor!)
+   let iconThree = IconLabel(text: "3", textColor: UIColor.tabbarColor!)
    
-   let iconTwo: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "2"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   let iconthree: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.tabbarColor
-      label.text = "3"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   let readLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.whiteDarkColor
-      label.text = "Read"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   
-   let drawLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.whiteDarkColor
-      label.text = "Draw"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
-   let writeLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.white
-      label.text = "Write"
-      label.font = UIFont(name: "Atma", size: 22.0)
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
-   
+   let readLabel = IconTitleLabel(text: "Read", textColor: UIColor.white)
+   let drawLabel = IconTitleLabel(text: "Draw", textColor: UIColor.whiteDarkColor!)
+   let writeLabel = IconTitleLabel(text: "Write", textColor: UIColor.whiteDarkColor!)
    
    
    // Bottom View
    
-   let pencilLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = .white
-      label.text = " DON'T FORGET! "
-      label.font = UIFont(name: "Bangers", size: 40.0)
-      label.textAlignment = NSTextAlignment.center
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
-   }()
+   let pencilLabel = TitleLabel(text: " DON'T FORGET! ")
    
-   let favoriteLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = .white
-      label.text = "When your story is complete, snap a photo of\nyour pages and upload them."
-      label.font = UIFont(name: "Atma", size: 18.0)
-      label.textAlignment = NSTextAlignment.center
-      label.numberOfLines = 4
-      return label
-   }()
+   let favoriteLabel = IntroLabel(text: "When your story is complete, snap a photo of\nyour pages and upload them.", numberOfLines: 4)
+   
    
    let drawImageIcon: UIImageView = {
       let image = UIImageView()
@@ -232,37 +124,45 @@ class WriteVC: UIViewController {
       image.contentMode = .scaleAspectFill
       return image
    }()
-   
+  
    let uploadStoryButton: UIButton = {
-      let button = UIButton()
-      button.setTitle("Upload Writing", for: .normal)
-      button.setTitleColor(UIColor.borderTwoColor, for: .normal)
-      button.titleLabel?.font = UIFont(name: "Atma-Medium", size: 20.0)
-      button.backgroundColor = UIColor.aquaColor
-      button.layer.borderWidth = 3
-      button.layer.borderColor = UIColor.borderTwoColor?.cgColor
-      button.layer.cornerRadius = 10
-      button.clipsToBounds = true
-      button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 30, bottom: 5, right: 30)
-      button.translatesAutoresizingMaskIntoConstraints = false
+      let button = ActionButton(title: "Upload Writing")
       button.addTarget(self, action: #selector(handlePhotoLibraryButton), for: .touchUpInside)
       return button
    }()
    
+//   let uploadStoryButton: UIButton = {
+//      let button = UIButton()
+//      button.setTitle("Upload Writing", for: .normal)
+//      button.setTitleColor(UIColor.borderTwoColor, for: .normal)
+//      button.titleLabel?.font = UIFont(name: "Atma-Medium", size: 20.0)
+//      button.backgroundColor = UIColor.aquaColor
+//      button.layer.borderWidth = 3
+//      button.layer.borderColor = UIColor.borderTwoColor?.cgColor
+//      button.layer.cornerRadius = 10
+//      button.clipsToBounds = true
+//      button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 30, bottom: 5, right: 30)
+//      button.translatesAutoresizingMaskIntoConstraints = false
+//      button.addTarget(self, action: #selector(handlePhotoLibraryButton), for: .touchUpInside)
+//      return button
+//   }()
+   
 
+//MARK: Properties
+   
+   var image: [UIImage] = []
+   
    
 //MARK: App Circle
    
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = UIColor.tabbarColor
       navigationItem.title = "Read"
       self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Bangers", size: 20)!]
       
-      writeCollectionView.delegate = self
-      writeCollectionView.dataSource = self
+//      writeCollectionView.delegate = self
+//      writeCollectionView.dataSource = self
         
       configureUI()
         
@@ -271,7 +171,6 @@ class WriteVC: UIViewController {
    override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
        self.tabBarController?.tabBar.isHidden = true
-//       self.hidesBottomBarWhenPushed = true
       bottomView.isHidden = false
       bottomPicturesView.isHidden = true
    }//
@@ -289,9 +188,12 @@ class WriteVC: UIViewController {
    @objc func handlePhotoLibraryButton() {
       bottomView.isHidden = true
       bottomAlertView.isHidden = true
-      bottomPicturesView.isHidden = false
+      bottomPicturesView.isHidden = true
       configureDocumentView()
       
+      let rootVC = WriteSubmitVC()
+//      self.present(rootVC, animated: true, completion: nil)
+      self.navigationController?.pushViewController(rootVC, animated: true)
    }//
    
 //MARK: This button saves to the database
@@ -409,7 +311,7 @@ class WriteVC: UIViewController {
             top: iconRight.bottomAnchor, centerX: iconRight.centerXAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0)
          )
          
-         iconRight.addSubviewsUsingAutolayout(iconthree)
+         iconRight.addSubviewsUsingAutolayout(iconThree)
          iconRight.anchor(
             top: iconRightView.topAnchor, centerX: iconRightView.centerXAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0), size: .init(width: 40, height: 40)
          )
@@ -417,7 +319,7 @@ class WriteVC: UIViewController {
          iconRight.clipsToBounds = true
          iconRight.backgroundColor = UIColor.writeColor
          
-         iconthree.anchor(
+         iconThree.anchor(
             centerX: iconRight.centerXAnchor, centerY: iconRight.centerYAnchor
          )
          
@@ -431,7 +333,7 @@ class WriteVC: UIViewController {
          bottomAlertView.backgroundColor = UIColor.tabbarColor
          
          alertImage.anchor(
-            centerX: bottomAlertView.centerXAnchor, centerY: bottomAlertView.centerYAnchor, size: .init(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.width - 40)
+            centerX: bottomAlertView.centerXAnchor, centerY: bottomAlertView.centerYAnchor, size: .init(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.width + 40)
          )
          alertTitle.anchor(
             bottom: alertIntro.topAnchor, centerX: alertImage.centerXAnchor, padding: .init(top: 0, left: 0, bottom: -10, right: 0)
@@ -440,7 +342,7 @@ class WriteVC: UIViewController {
             centerX: alertImage.centerXAnchor, centerY: alertImage.centerYAnchor
          )
          alertButton.anchor(
-            top: alertIntro.bottomAnchor, centerX: alertImage.centerXAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 100, height: 50)
+            top: alertIntro.bottomAnchor, centerX: alertImage.centerXAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 0)
          )
          
          
@@ -502,33 +404,36 @@ class WriteVC: UIViewController {
 
 }// Class
 
-extension WriteVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-   
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      return CGSize(width: writeCollectionView.frame.width, height: writeCollectionView.frame.height)
-   }
-   
-   
-   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return 3
-   }
-   
-   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
-      
-      
-      
-      return cell
-   }
-   
-}//
+//extension WriteVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+//
+//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//      return CGSize(width: writeCollectionView.frame.width, height: writeCollectionView.frame.height)
+//   }
+//
+//
+//   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//      return 3
+//   }
+//
+//   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
+//
+//
+//
+//      return cell
+//   }
+//
+//}//
 
 extension WriteVC: VNDocumentCameraViewControllerDelegate {
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         
         for pageNumber in 0..<scan.pageCount {
             let image = scan.imageOfPage(at: pageNumber)
+            self.image.append(image)
             
+            
+         
             print(image)
             //Assign scam document <image> to collection view data source
             // below assigns to UIImageView i used in previous project
@@ -536,37 +441,46 @@ extension WriteVC: VNDocumentCameraViewControllerDelegate {
             
             
         }
-        controller.dismiss(animated: true, completion: nil)
+//        controller.dismiss(animated: true, completion: nil)
+      
+         controller.dismiss(animated: true) {
+         let rootVC = WriteSubmitVC()
+            rootVC.scanImages = self.image
+//            rootVC.scanImages = self.image
+//            self.present(rootVC, animated: true, completion: nil)
+         self.navigationController?.pushViewController(rootVC, animated: false)
+      }
+      
     }
 }
 
 
-class CustomCell: UICollectionViewCell {
-   
-   fileprivate let bg: UIImageView = {
-      let image = UIImageView()
-      image.contentMode = .scaleAspectFill
-      image.layer.cornerRadius = 12
-      image.clipsToBounds = true
-      image.backgroundColor = .systemTeal
-      image.translatesAutoresizingMaskIntoConstraints = false
-      return image
-   }()
-   
-   override init(frame: CGRect) {
-      super.init(frame: frame)
-      
-      contentView.addSubview(bg)
-      
-      bg.anchor(
-         top: contentView.topAnchor, leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, bottom: contentView.bottomAnchor
-      )
-   }
-   
-   
-   
-   required init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-   }
-   
-}//
+//class CustomCell: UICollectionViewCell {
+//
+//   fileprivate let bg: UIImageView = {
+//      let image = UIImageView()
+//      image.contentMode = .scaleAspectFill
+//      image.layer.cornerRadius = 12
+//      image.clipsToBounds = true
+//      image.backgroundColor = .systemTeal
+//      image.translatesAutoresizingMaskIntoConstraints = false
+//      return image
+//   }()
+//
+//   override init(frame: CGRect) {
+//      super.init(frame: frame)
+//
+//      contentView.addSubview(bg)
+//
+//      bg.anchor(
+//         top: contentView.topAnchor, leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, bottom: contentView.bottomAnchor
+//      )
+//   }
+//
+//
+//
+//   required init?(coder: NSCoder) {
+//      fatalError("init(coder:) has not been implemented")
+//   }
+//
+//}//
