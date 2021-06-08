@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Child" representedClassName="Child" syncable="YES" codeGenerationType="class">
         <attribute name="avatarURL" optional="YES" attributeType="String"/>
         <attribute name="childID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="cohortId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cohortID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gradeLevel" optional="YES" attributeType="String"/>
         <attribute name="isDyslexic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -18,7 +18,7 @@
         <relationship name="child" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Child" inverseName="parent" inverseEntity="Child"/>
     </entity>
     <elements>
+        <element name="Child" positionX="138.201171875" positionY="-15.521484375" width="128" height="149"/>
         <element name="Parent" positionX="-57.66259765625" positionY="-8.69891357421875" width="128" height="118"/>
-        <element name="Child" positionX="138.201171875" positionY="-15.521484375" width="128" height="163"/>
     </elements>
 </model>
