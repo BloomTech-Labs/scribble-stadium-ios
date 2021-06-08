@@ -14,15 +14,23 @@ struct ParentRepresentation: Codable {
     let email: String
     let pin: String
     
-    private enum ParentCodingKeys: String, CodingKey {
+    private enum ParentKeys: String, CodingKey {
         case id = "ID"
         case name = "Name"
         case email = "Email"
         case pin = "PIN"
     }
     
+    init(parentID: Int, name: String, email: String, pin: String) {
+        self.parentID = parentID
+        self.name = name
+        self.email = email
+        self.pin = pin
+        
+    }
+    
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: ParentCodingKeys.self)
+        let container = try decoder.container(keyedBy: ParentKeys.self)
         
         parentID = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)

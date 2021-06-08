@@ -9,78 +9,49 @@
 import Foundation
 
 struct ChildRepresentation: Codable {
+    let childID: Int
+    let avatarURL: URL
+    let gradeLevel: String
+    let name: String
+    let pin: String
+    let isDyslexic: Bool
+    let cohortID: Int
+    let parentID: Int
     
-    enum ChildCodingKeys: String, CodingKey {
-        case child
-        
-        //swiftlint:disable:next nesting
-        enum ChildPropertiesCodingKeys: String, CodingKey {
-            
-            case username
-            case id
-            case cohort
-            case grade
-            case avatar
-            case dyslexiaPreference = "preferences"
-            //            case name
-            //            case parent
-            //            case pin
-            
-            //swiftlint:disable:next nesting
-            enum DyslexiaCodingKeys: String, CodingKey {
-                case dyslexia
-            }
-        }
+    enum ChildKeys: String, CodingKey {
+        case id = "ID"
+        case avatarURL = "AvatarURL"
+        case gradeLevel = "GradeLevel"
+        case name = "Name"
+        case pin = "PIN"
+        case isDyslexic = "IsDyslexic"
+        case cohortID = "CohortID"
+        case parentID = "ParentID"
     }
     
-    var id: Int16
-    var username: String?
-    var grade: Int16
-    var dyslexiaPreference: Bool = false
-    var avatar: String?
-    
-    //    var name: String
-    //    var parent: ParentRepresentation
-    //    var cohort: String?
-    //    var pin: Int16
-    
     // Regular init
-    init(name: String?, id: Int16, username: String?, cohort: String?, grade: Int16, dyslexiaPreference: Bool, pin: Int16?, avatar: String?) {
-        //        init(name: String, id: String, username: String?, cohort: String?, grade: Int16, dyslexiaPreference: Bool, pin: Int16, avatar: String?) {
-        
-        self.id = id
-        self.username = username
-        self.grade = grade
-        self.dyslexiaPreference = dyslexiaPreference
-        self.avatar = avatar
-        
-        //        self.name = name
-        //        self.parent = parent
-        //        self.cohort = cohort
-        //        self.pin = pin
+    init(childID: Int, avatarURL: URL, gradeLevel: String, name: String, pin: String, isDyslexic: Bool, cohortID: Int, parentID: Int) {
+        self.childID = childID
+        self.avatarURL = avatarURL
+        self.gradeLevel = gradeLevel
+        self.name = name
+        self.pin = pin
+        self.isDyslexic = isDyslexic
+        self.cohortID = cohortID
+        self.parentID = parentID
     }
     
     // init when Decoding
     init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ChildKeys.self)
         
-        let childContainer = try decoder.container(keyedBy: ChildCodingKeys.self)
-        let propertiesContainer = try childContainer.nestedContainer(keyedBy: ChildCodingKeys.ChildPropertiesCodingKeys.self, forKey: .child)
-        let dyslexiaContainer = try propertiesContainer.nestedContainer(keyedBy: ChildCodingKeys.ChildPropertiesCodingKeys.DyslexiaCodingKeys.self, forKey: .dyslexiaPreference)
-        
-        id = try propertiesContainer.decode(Int16.self, forKey: .id)
-        username = try propertiesContainer.decode(String?.self, forKey: .username)
-        grade = try propertiesContainer.decode(Int16.self, forKey: .grade)
-        dyslexiaPreference = try dyslexiaContainer.decode(Bool.self, forKey: .dyslexia)
-        avatar = try propertiesContainer.decode(String?.self, forKey: .avatar)
-        
-        //        name = try propertiesContainer.decode(String.self, forKey: .name)
-        //        parent = try propertiesContainer.decode(ParentRepresentation.self, forKey: .parent)
-        //        cohort = try propertiesContainer.decode(String?.self, forKey: .cohort)
-        //        pin = try propertiesContainer.decode(Int16.self, forKey: .pin)
-        
-        //            parent = nil
-        //           name = ""
-        //            pin = 1234
-        //            cohort = ""
+        childID = try container.decode(Int.self, forKey: .id)
+        avatarURL = try container.decode(URL.self, forKey: .avatarURL)
+        gradeLevel = try container.decode(String.self, forKey: .gradeLevel)
+        name = try container.decode(String.self, forKey: .name)
+        pin = try container.decode(String.self, forKey: .pin)
+        isDyslexic = try container.decode(Bool.self, forKey: .isDyslexic)
+        cohortID = try container.decode(Int.self, forKey: .cohortID)
+        parentID = try container.decode(Int.self, forKey: .parentID)
     }
 }
