@@ -8,18 +8,17 @@
 
 import Foundation
 import CoreData
-/// Note from Cora: uncomment this after you create the CoreData model file
 extension Parent {
     // MARK: CoreData Inititalizer
     @discardableResult convenience init(parentID: Int16,
-                                        email: String,
                                         name: String,
+                                        email: String,
                                         pin: String,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.parentID = parentID
-        self.email = email
         self.name = name
+        self.email = email
         self.pin = pin
     }
 
@@ -27,8 +26,8 @@ extension Parent {
     @discardableResult convenience init?(parentRepresentation: ParentRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
         self.init(parentID: Int16(parentRepresentation.parentID),
-                  email: parentRepresentation.email,
                   name: parentRepresentation.name,
+                  email: parentRepresentation.email,
                   pin: parentRepresentation.pin,
                   context: context)
     }

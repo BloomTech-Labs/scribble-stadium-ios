@@ -21,14 +21,15 @@ struct ParentRepresentation: Codable {
         case pin = "PIN"
     }
     
+    // Regular init
     init(parentID: Int, name: String, email: String, pin: String) {
         self.parentID = parentID
         self.name = name
         self.email = email
         self.pin = pin
-        
     }
     
+    // Init from decoder
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: ParentKeys.self)
         
