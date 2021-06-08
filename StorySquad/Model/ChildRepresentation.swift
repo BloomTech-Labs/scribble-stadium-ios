@@ -16,7 +16,6 @@ struct ChildRepresentation: Codable {
     let pin: String
     let isDyslexic: Bool
     let cohortID: Int
-    let parentID: Int
     
     enum ChildKeys: String, CodingKey {
         case id = "ID"
@@ -26,7 +25,6 @@ struct ChildRepresentation: Codable {
         case pin = "PIN"
         case isDyslexic = "IsDyslexic"
         case cohortID = "CohortID"
-        case parentID = "ParentID"
     }
     
     // Regular init
@@ -38,7 +36,6 @@ struct ChildRepresentation: Codable {
         self.pin = pin
         self.isDyslexic = isDyslexic
         self.cohortID = cohortID
-        self.parentID = parentID
     }
     
     // init when Decoding
@@ -52,6 +49,5 @@ struct ChildRepresentation: Codable {
         pin = try container.decode(String.self, forKey: .pin)
         isDyslexic = try container.decode(Bool.self, forKey: .isDyslexic)
         cohortID = try container.decode(Int.self, forKey: .cohortID)
-        parentID = try container.decode(Int.self, forKey: .parentID)
     }
 }
