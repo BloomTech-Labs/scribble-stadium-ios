@@ -117,7 +117,7 @@ class LoginVC: UIViewController {
 //    Uncomment to access Okta Login Page
       UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
 
-      let modal = MainTabbarVC()
+      let modal = PinVC()
       modal.modalPresentationStyle = .fullScreen
       present(modal, animated: true, completion: nil)
       print("tapped")
