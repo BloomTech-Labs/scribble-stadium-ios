@@ -149,7 +149,7 @@ class PinVC: UIViewController {
           size: .init(width: backView.frame.width, height: 250)
        )
        middleView.translatesAutoresizingMaskIntoConstraints = false
-       middleView.backgroundColor = UIColor.aquaColor
+       middleView.backgroundColor = UIColor.white
 
        pinStackView.anchor(
           leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: pinStackView.topAnchor, padding: .init(top: 0, left: 35, bottom: -10, right: -30)
