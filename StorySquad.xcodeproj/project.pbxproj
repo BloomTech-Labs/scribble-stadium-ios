@@ -47,7 +47,6 @@
 		466C427D249A8749007D033E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466C427C249A8749007D033E /* Assets.xcassets */; };
 		466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466C427E249A8749007D033E /* LaunchScreen.storyboard */; };
 		46908EB62513C971003252BA /* OktaAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46908EB52513C971003252BA /* OktaAuth */; };
-		46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */; };
 		46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4E624C98D8900FE0CD1 /* Notifications.swift */; };
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
@@ -108,7 +107,6 @@
 		466C427F249A8749007D033E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		466C4281249A8749007D033E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466C4287249A889F007D033E /* FileOrganization.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FileOrganization.md; sourceTree = "<group>"; };
-		46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		46BEB4E624C98D8900FE0CD1 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
@@ -317,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				1AADE4572656FB0E007F42C5 /* LoginVC.swift */,
-				46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -469,7 +466,6 @@
 				1AADE4682656FC8C007F42C5 /* ChildInParentRepresentation.swift in Sources */,
 				1AADE4582656FB0E007F42C5 /* LoginVC.swift in Sources */,
 				445676E926574E5400DC9662 /* CoreDataStack.swift in Sources */,
-				46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */,
 				1AADE4602656FB5D007F42C5 /* ReadVC.swift in Sources */,
 				1AADE46E2656FCA0007F42C5 /* ParentRepresentation.swift in Sources */,
 				1AADE44B2656F905007F42C5 /* UIView+Constraint.swift in Sources */,
