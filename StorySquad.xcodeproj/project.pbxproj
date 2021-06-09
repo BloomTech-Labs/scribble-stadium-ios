@@ -40,6 +40,7 @@
 		1AADE46A2656FC93007F42C5 /* ChildRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE4692656FC93007F42C5 /* ChildRepresentation.swift */; };
 		1AADE46C2656FC99007F42C5 /* Parent+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */; };
 		1AADE46E2656FCA0007F42C5 /* ParentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */; };
+		3C7D6DEF26705331000B3F48 /* PinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D6DEE26705331000B3F48 /* PinVC.swift */; };
 		445676E926574E5400DC9662 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445676E826574E5400DC9662 /* CoreDataStack.swift */; };
 		445676EC26574E8500DC9662 /* StorySquad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 445676EA26574E8500DC9662 /* StorySquad.xcdatamodeld */; };
 		466C4274249A8748007D033E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C4273249A8748007D033E /* AppDelegate.swift */; };
@@ -98,6 +99,7 @@
 		1AADE4692656FC93007F42C5 /* ChildRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildRepresentation.swift; sourceTree = "<group>"; };
 		1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parent+Convenience.swift"; sourceTree = "<group>"; };
 		1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentRepresentation.swift; sourceTree = "<group>"; };
+		3C7D6DEE26705331000B3F48 /* PinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVC.swift; sourceTree = "<group>"; };
 		445676E826574E5400DC9662 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		445676EB26574E8500DC9662 /* StorySquad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorySquad.xcdatamodel; sourceTree = "<group>"; };
 		466C4270249A8748007D033E /* StorySquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorySquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				1AADE4572656FB0E007F42C5 /* LoginVC.swift */,
+				3C7D6DEE26705331000B3F48 /* PinVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				8607E9932669C1D9008316CD /* WriteSubmitVC.swift in Sources */,
 				1AADE45E2656FB53007F42C5 /* SettingsVC.swift in Sources */,
+				3C7D6DEF26705331000B3F48 /* PinVC.swift in Sources */,
 				8607E9AD266AC454008316CD /* AlertIntroLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
