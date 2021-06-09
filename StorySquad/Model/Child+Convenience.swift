@@ -26,7 +26,7 @@ extension Child {
         self.name = name
         self.pin = pin
         self.isDyslexic = isDyslexic
-        //self.cohortID = cohortID
+        self.cohortID = cohortID
     }
 
     // MARK: Init from Representation
