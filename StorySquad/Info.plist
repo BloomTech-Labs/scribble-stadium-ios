@@ -25,7 +25,7 @@
 			<string>com.LambdaSchool.LabsScaffolding</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>labs</string>
+				<string>storysquad</string>
 			</array>
 		</dict>
 	</array>
