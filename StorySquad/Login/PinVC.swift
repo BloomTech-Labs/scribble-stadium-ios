@@ -32,9 +32,17 @@ class PinVC: UIViewController {
 
     lazy var pinStackView: UIStackView = {
         let pinStack = UIStackView()
+        let pin_one = UITextField()
+        let pin_two = UITextField()
+        let pin_three = UITextField()
+        let pin_four = UITextField()
         pinStack .distribution = .fillEqually
-        pinStack .spacing = 20
+        pinStack .spacing = 10
         pinStack .axis = .horizontal
+        pinStack.addArrangedSubview(pin_one)
+        pinStack.addArrangedSubview(pin_two)
+        pinStack.addArrangedSubview(pin_three)
+        pinStack.addArrangedSubview(pin_four)
         return pinStack
 
     }()
@@ -66,22 +74,22 @@ class PinVC: UIViewController {
        return title
     }()
 
-    let pinTextField1: UITextField = {
-       let pin_one = PinTextField()
-       return pin_one
-    }()
-    let pinTextField2: UITextField = {
-       let pin_two = PinTextField()
-       return pin_two
-    }()
-    let pinTextField3: UITextField = {
-       let pin_three = PinTextField()
-       return pin_three
-    }()
-    let pinTextField4: UITextField = {
-       let pin_four = PinTextField()
-       return pin_four
-    }()
+//    let pinTextField1: UITextField = {
+//       let pin_one = PinTextField()
+//       return pin_one
+//    }()
+//    let pinTextField2: UITextField = {
+//       let pin_two = PinTextField()
+//       return pin_two
+//    }()
+//    let pinTextField3: UITextField = {
+//       let pin_three = PinTextField()
+//       return pin_three
+//    }()
+//    let pinTextField4: UITextField = {
+//       let pin_four = PinTextField()
+//       return pin_four
+//    }()
 
 
      override func viewDidLoad() {
@@ -101,7 +109,7 @@ class PinVC: UIViewController {
     func configureUI() {
        view.addSubviewsUsingAutolayout(backView)
        setupBackView()
-    }//
+    }
 
     func setupBackView() {
        backView.addSubviewsUsingAutolayout(mainStackView)
@@ -136,40 +144,24 @@ class PinVC: UIViewController {
         )
 
 
-//       middleView.addSubviewsUsingAutolayout(emailAddressLabel, emailTextField, loginButton)
+     middleView.addSubviewsUsingAutolayout(pinStackView)
        middleView.anchor(
           size: .init(width: backView.frame.width, height: 250)
        )
        middleView.translatesAutoresizingMaskIntoConstraints = false
        middleView.backgroundColor = UIColor.aquaColor
 
-//       emailAddressLabel.anchor(
-//          leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: emailTextField.topAnchor, padding: .init(top: 0, left: 35, bottom: -10, right: -30)
-//       )
+       pinStackView.anchor(
+          leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: pinStackView.topAnchor, padding: .init(top: 0, left: 35, bottom: -10, right: -30)
+       )
 
 
-
-
-//       loginButton.anchor(
-//          leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, centerX: middleView.centerXAnchor, centerY: middleView.centerYAnchor, padding: .init(top: 0, left: 25, bottom: 0, right: -25), size: .init(width: middleView.frame.width, height: emailHeight)
-//       )
-//       loginButton.layer.borderWidth = 1
-//       loginButton.layer.borderColor = UIColor.white.cgColor
-//       loginButton.layer.cornerRadius = emailHeight / 2
-//       loginButton.clipsToBounds = true
-
-       //bottomView.addSubviewsUsingAutolayout(createAccountButton)
        bottomView.anchor(
 
        )
        bottomView.translatesAutoresizingMaskIntoConstraints = false
        bottomView.backgroundColor = UIColor.aquaColor
 
+    }
 
-
-    }//
-
-
-
-
- }// Class
+ }
