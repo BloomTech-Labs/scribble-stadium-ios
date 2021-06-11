@@ -36,9 +36,9 @@ class PinVC: UIViewController {
         let pin_two = UITextField()
         let pin_three = UITextField()
         let pin_four = UITextField()
-        pinStack .distribution = .fillEqually
-        pinStack .spacing = 10
-        pinStack .axis = .horizontal
+        pinStack.distribution = .fillEqually
+        pinStack.spacing = 10
+        pinStack.axis = .horizontal
         pinStack.addArrangedSubview(pin_one)
         pinStack.addArrangedSubview(pin_two)
         pinStack.addArrangedSubview(pin_three)
@@ -73,23 +73,6 @@ class PinVC: UIViewController {
        title.translatesAutoresizingMaskIntoConstraints = false
        return title
     }()
-
-//    let pinTextField1: UITextField = {
-//       let pin_one = PinTextField()
-//       return pin_one
-//    }()
-//    let pinTextField2: UITextField = {
-//       let pin_two = PinTextField()
-//       return pin_two
-//    }()
-//    let pinTextField3: UITextField = {
-//       let pin_three = PinTextField()
-//       return pin_three
-//    }()
-//    let pinTextField4: UITextField = {
-//       let pin_four = PinTextField()
-//       return pin_four
-//    }()
 
 
      override func viewDidLoad() {
