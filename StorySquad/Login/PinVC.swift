@@ -9,9 +9,6 @@
 
 import UIKit
 
-class PinTextField: UITextField {
-
-}
 
 class PinVC: UIViewController {
     let backView = UIView()
