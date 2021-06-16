@@ -29,12 +29,14 @@ class MainTabbarVC: UITabBarController {
              
       UINavigationBar.appearance().standardAppearance = coloredAppearance
       UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-      
+        
+    NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful, object: nil, queue: .main, using: checkForExistingProfile)
+        
+    NotificationCenter.default.addObserver(forName: .oktaAuthenticationExpired, object: nil, queue: .main, using: alertUserOfExpiredCredentials)
 
         createTabbar()
     }//
     
-   
    func createTabbar() {
       let tabbar = [createMissionNC(), createLeaderboardNC(), createGalleryNC(), createSettingNC()]
       viewControllers = tabbar
@@ -88,4 +90,35 @@ class MainTabbarVC: UITabBarController {
        UINavigationBar.appearance().tintColor = .label
    }
 
+    
+    let profileController = ProfileController.shared
+    
+    private func checkForExistingProfile() {
+        profileController.checkForExistingAuthenticatedUserProfile { [weak self] (exists) in
+            
+            guard let self = self,
+                self.presentedViewController == nil else { return }
+            
+            if exists {
+                //segue to rootview
+               // self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }//
+    
+    private func checkForExistingProfile(with notification: Notification) {
+        checkForExistingProfile()
+    }
+    
+    private func alertUserOfExpiredCredentials(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presentSimpleAlert(with: "Your Okta credentials have expired",
+                           message: "Please sign in again",
+                           preferredStyle: .alert,
+                           dismissText: "Dimiss")
+        }
+    }
+    
+    
+    
 }// Tabbar
