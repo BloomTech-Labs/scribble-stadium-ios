@@ -110,23 +110,53 @@ class LoginVC: UIViewController {
       view.backgroundColor = UIColor.aquaColor
         
       configureUI()
+        
+        NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful, object: nil, queue: .main, using: checkForExistingProfile)
+            
+        NotificationCenter.default.addObserver(forName: .oktaAuthenticationExpired, object: nil, queue: .main, using: alertUserOfExpiredCredentials)
     }
    
    
    @objc func handleLoginButton() {
 //    Uncomment to access Okta Login Page
-      UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
+//      UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
 
       let modal = PinVC()
-      modal.modalPresentationStyle = .fullScreen
       present(modal, animated: true, completion: nil)
       print("tapped")
       
 //      let rootVC = MissionVC()
 //      navigationController?.pushViewController(rootVC, animated: true)
 //
-   }
-   
+   }//
+    
+    let profileController = ProfileController.shared
+    
+    private func checkForExistingProfile() {
+        profileController.checkForExistingAuthenticatedUserProfile { [weak self] (exists) in
+            
+            guard let self = self,
+                self.presentedViewController == nil else { return }
+            
+            if exists {
+                //segue to rootview
+               // self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }//
+    
+    private func checkForExistingProfile(with notification: Notification) {
+        checkForExistingProfile()
+    }//
+    
+    private func alertUserOfExpiredCredentials(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presentSimpleAlert(with: "Your Okta credentials have expired",
+                           message: "Please sign in again",
+                           preferredStyle: .alert,
+                           dismissText: "Dimiss")
+        }
+    }//
    
    
    override var preferredStatusBarStyle: UIStatusBarStyle {
