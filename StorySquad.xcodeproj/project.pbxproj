@@ -99,6 +99,7 @@
 		1AADE4692656FC93007F42C5 /* ChildRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildRepresentation.swift; sourceTree = "<group>"; };
 		1AADE46B2656FC99007F42C5 /* Parent+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parent+Convenience.swift"; sourceTree = "<group>"; };
 		1AADE46D2656FCA0007F42C5 /* ParentRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentRepresentation.swift; sourceTree = "<group>"; };
+		2230BB83267CE777004AD40F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3C7D6DEE26705331000B3F48 /* PinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVC.swift; sourceTree = "<group>"; };
 		445676E826574E5400DC9662 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		445676EB26574E8500DC9662 /* StorySquad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorySquad.xcdatamodel; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2230BB83267CE777004AD40F /* README.md */,
 				1AADE44C2656F930007F42C5 /* CustomUI */,
 				445676E826574E5400DC9662 /* CoreDataStack.swift */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
