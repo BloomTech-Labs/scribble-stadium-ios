@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Lambda-School-Labs/PT17_cityspire-b-ios/blob/main/labs-ios-starter/Assets.xcassets/CitySpireLogo-Dark.imageset/CitySpireLogo-Dark.png">
+  <img src="https://github.com/Lambda-School-Labs/storysquad-ios/blob/main/Photos/StorySquadLogo.png">
 </p>
 
 ## Mission
@@ -40,11 +40,11 @@ City Spire analyzes data from cities such as populations, cost of living, rental
 - SceneKit
 
 ### Project Lead
-|                                                      [Cris LaFortune](https://github.com/cdlafortune)                                                      |
+|                                                      [Cora Jacobson](https://github.com/CoraJacobson)                                                      |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://avatars.githubusercontent.com/u/45853079?s=400&v=4" width = "150" />](https://github.com/cdlafortune) |
-|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/cdlafortune)                                |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/cris-lafortune/)                | 
+| [<img src="https://avatars.githubusercontent.com/u/64975403?v=4" width = "150" />](https://github.com/CoraJacobson) |
+|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CoraJacobson)                                |
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/cora-jacobson/)                | 
 
 ### iOS Contributors
 
