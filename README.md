@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Lambda-School-Labs/PT17_cityspire-b-ios/blob/main/labs-ios-starter/Assets.xcassets/CitySpireLogo-Dark.imageset/CitySpireLogo-Dark.png">
+  <img src="https://github.com/Lambda-School-Labs/storysquad-ios/blob/main/Photos/StorySquadLogo.png">
 </p>
 
 ## Mission
