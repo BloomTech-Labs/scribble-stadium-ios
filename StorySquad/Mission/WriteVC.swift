@@ -435,9 +435,7 @@ extension WriteVC: VNDocumentCameraViewControllerDelegate {
             
          
             print(image)
-            //Assign scam document <image> to collection view data source
-            // below assigns to UIImageView i used in previous project
-            //scanImageView.image = image
+            
             
             
         }
