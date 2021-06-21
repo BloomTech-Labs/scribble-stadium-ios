@@ -8,9 +8,7 @@
 
 import UIKit
 
-class EmailTextField: UITextField {
-    // remove this when you refactor
-}
+//class EmailTextField: UITextField {}
 
 class LoginVC: UIViewController {
    
@@ -68,25 +66,25 @@ class LoginVC: UIViewController {
       return title
    }()
    
-   let emailAddressLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = UIColor.subTitleColor
-      label.text = "Email Adress"
-      label.font = UIFont(name: "Open Sans", size: 14.0)
-      label.font = UIFont.systemFont(ofSize: 14.0, weight: .bold)
-      return label
-   }()
+//   let emailAddressLabel: UILabel = {
+//      let label = UILabel()
+//      label.textColor = UIColor.subTitleColor
+//      label.text = "Email Adress"
+//      label.font = UIFont(name: "Open Sans", size: 14.0)
+//      label.font = UIFont.systemFont(ofSize: 14.0, weight: .bold)
+//      return label
+//   }()
    
-   let emailTextField: UITextField = {
-      let email = EmailTextField()
-      return email
-   }()
+//   let emailTextField: UITextField = {
+//      let email = EmailTextField()
+//      return email
+//   }()
    
    let loginButton: UIButton = {
       let button = UIButton()
 //      button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
       button.setTitleColor(.white, for: .normal)
-      button.setTitle("Log In", for: .normal)
+      button.setTitle("Sign In", for: .normal)
       button.titleLabel?.font =  UIFont(name: "Mulish", size: 15.0)
       button.backgroundColor = UIColor.tabbarColor
       button.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
@@ -200,27 +198,27 @@ class LoginVC: UIViewController {
          top: titleLabel.bottomAnchor, centerX: titleLabel.centerXAnchor, padding: .init(top: 25, left: 0, bottom: 0, right: 0)
       )
       
-      
-      middleView.addSubviewsUsingAutolayout(emailAddressLabel, emailTextField, loginButton)
+//    removed emailTextField and emailAddressLabel from subviews
+      middleView.addSubviewsUsingAutolayout(loginButton)
       middleView.anchor(
          size: .init(width: backView.frame.width, height: 250)
       )
       middleView.translatesAutoresizingMaskIntoConstraints = false
       middleView.backgroundColor = UIColor.aquaColor
       
-      emailAddressLabel.anchor(
-         leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: emailTextField.topAnchor, padding: .init(top: 0, left: 35, bottom: -10, right: -30)
-      )
+//      emailAddressLabel.anchor(
+//         leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: loginButton.topAnchor, padding: .init(top: 0, left: 35, bottom: -10, right: -30)
+//      )
       
       let emailHeight = UIScreen.main.bounds.width / 7
       
-      emailTextField.anchor(
-         leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: loginButton.topAnchor, padding: .init(top: 0, left: 25, bottom: -25, right: -25), size: .init(width: middleView.frame.width, height: emailHeight)
-      )
-      emailTextField.layer.borderWidth = 1
-      emailTextField.layer.borderColor = UIColor.gray.cgColor
-      emailTextField.layer.cornerRadius = emailHeight / 2
-      emailTextField.clipsToBounds = true
+//      emailTextField.anchor(
+//         leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: loginButton.topAnchor, padding: .init(top: 0, left: 25, bottom: -25, right: -25), size: .init(width: middleView.frame.width, height: emailHeight)
+//      )
+//      emailTextField.layer.borderWidth = 1
+//      emailTextField.layer.borderColor = UIColor.gray.cgColor
+//      emailTextField.layer.cornerRadius = emailHeight / 2
+//      emailTextField.clipsToBounds = true
       
       
       loginButton.anchor(
