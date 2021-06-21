@@ -431,13 +431,7 @@ extension WriteVC: VNDocumentCameraViewControllerDelegate {
         for pageNumber in 0..<scan.pageCount {
             let image = scan.imageOfPage(at: pageNumber)
             self.image.append(image)
-            
-            
-         
             print(image)
-            
-            
-            
         }
 //        controller.dismiss(animated: true, completion: nil)
       
