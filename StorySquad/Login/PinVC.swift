@@ -9,8 +9,65 @@
 
 import UIKit
 
+class PinCodeTextField: UITextField {
+    //my code
+    private var isConfigured = false
+    
+    private var pinLabels = [UILabel]()
+    
+    func configure(with slotCount: Int = 4) {
+        guard isConfigured == false else {return}
+        isConfigured.toggle()
+        
+        configureTextField()
+        
+        let labelsStackView = createPinCodeStackView(with: slotCount)
+        addSubview(labelsStackView)
+        
+        NSLayoutConstraint.activate([
+            labelsStackView.topAnchor.constraint(equalTo: topAnchor),
+            labelsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            labelsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            labelsStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }//
+    
+    private func configureTextField() {
+        tintColor = .clear
+        textColor = .clear
+        keyboardType = .numberPad
+        textContentType = .oneTimeCode
+    }//
+    
+    private func createPinCodeStackView(with count: Int) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8
+        
+        for _ in 1...count {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
+            label.font = .systemFont(ofSize: 40)
+            label.backgroundColor = .white
+            label.isUserInteractionEnabled = true
+            
+            stackView.addArrangedSubview(label)
+            pinLabels.append(label)
+        }//
+        
+        
+        return stackView
+    }//
+
+}//
+
 
 class PinVC: UIViewController {
+    
     let backView = UIView()
 
     let topView = UIView()
@@ -26,23 +83,29 @@ class PinVC: UIViewController {
        stackView.axis = .vertical
        return stackView
     }()
-
-    lazy var pinStackView: UIStackView = {
-        let pinStack = UIStackView()
-        let pin_one = UITextField()
-        let pin_two = UITextField()
-        let pin_three = UITextField()
-        let pin_four = UITextField()
-        pinStack.distribution = .fillEqually
-        pinStack.spacing = 10
-        pinStack.axis = .horizontal
-        pinStack.addArrangedSubview(pin_one)
-        pinStack.addArrangedSubview(pin_two)
-        pinStack.addArrangedSubview(pin_three)
-        pinStack.addArrangedSubview(pin_four)
-        return pinStack
-
+//my code
+    let pinCodeTextField: UITextField = {
+        let pinCode = PinCodeTextField()
+        pinCode.configure()
+        return pinCode
     }()
+
+//    lazy var pinStackView: UIStackView = {
+//        let pinStack = UIStackView()
+//        let pin_one = UITextField()
+//        let pin_two = UITextField()
+//        let pin_three = UITextField()
+//        let pin_four = UITextField()
+//        pinStack.distribution = .fillEqually
+//        pinStack.spacing = 10
+//        pinStack.axis = .horizontal
+//        pinStack.addArrangedSubview(pin_one)
+//        pinStack.addArrangedSubview(pin_two)
+//        pinStack.addArrangedSubview(pin_three)
+//        pinStack.addArrangedSubview(pin_four)
+//        return pinStack
+//
+//    }()
 
 
     lazy var titleLabel: UILabel = {
@@ -77,9 +140,7 @@ class PinVC: UIViewController {
        view.backgroundColor = UIColor.aquaColor
 
        configureUI()
-     }
-
-
+     }//
 
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -123,18 +184,18 @@ class PinVC: UIViewController {
            top: titleLabel.bottomAnchor, centerX: titleLabel.centerXAnchor, padding: .init(top: 25, left: 0, bottom: 0, right: 0)
         )
 
+        middleView.addSubviewsUsingAutolayout(pinCodeTextField)
+          middleView.anchor(
+             size: .init(width: backView.frame.width, height: 250)
+          )
+        middleView.translatesAutoresizingMaskIntoConstraints = false
+        middleView.backgroundColor = UIColor.aquaColor
 
-     middleView.addSubviewsUsingAutolayout(pinStackView)
-       middleView.anchor(
-          size: .init(width: backView.frame.width, height: 250)
-       )
-       middleView.translatesAutoresizingMaskIntoConstraints = false
-       middleView.backgroundColor = UIColor.white
-
-       pinStackView.anchor(
-          leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: pinStackView.topAnchor, padding: .init(top: 0, left: 35, bottom: -10, right: -30)
-       )
-
+        pinCodeTextField.anchor(
+            leading: middleView.leadingAnchor, trailing: middleView.trailingAnchor, bottom: middleView.centerYAnchor,
+            padding: .init(top: 25, left: 35, bottom: -25, right: -35)
+        )
+        pinCodeTextField.clipsToBounds = true
 
        bottomView.anchor(
 
@@ -142,6 +203,6 @@ class PinVC: UIViewController {
        bottomView.translatesAutoresizingMaskIntoConstraints = false
        bottomView.backgroundColor = UIColor.aquaColor
 
-    }
+    }//
 
- }
+ }//
