@@ -56,4 +56,8 @@ Story Squad springs storytellers into action by partnering them up in creative c
 
 #### Team B
 
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars.githubusercontent.com/u/64510439?v=4" width = "150" />](https://github.com/CraigBelinfante) | [<img src="https://avatars.githubusercontent.com/u/61711015?v=4" width = "150" />](https://github.com/IanFrench) | 
+|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CraigBelinfante)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/IanFrench)                             |                            
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/craigbelinfante/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/iangfrench/)                 |  
 
