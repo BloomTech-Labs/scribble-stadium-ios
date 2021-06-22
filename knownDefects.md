@@ -17,13 +17,12 @@
 
 
 ## Team B:
-### <Description> 
-- // do work 
-- //do work 
+### Core Data
+- Models are set up to load the correct user profile 
+- Networking data needs to be added to allow users to access content and their profile
 
-### <Description> 
-- // do work 
-- //do work 
-
-## Notes:
-- // do work
+### Login View Controller and Pin Code View Controller 
+- users can securely sign in through Okta Authentication using the Parent profile
+- parent profile needs to be refactored to work with profileController
+- children can enter their 4 digit pin into the text fields after parent profile securely signs in
+- needs to capture an array of pin codes and match it to the child profile
