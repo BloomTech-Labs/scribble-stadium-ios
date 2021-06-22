@@ -60,9 +60,12 @@ Story Squad springs storytellers into action by partnering them up in creative c
 | [<img src="https://avatars.githubusercontent.com/u/64510439?v=4" width = "150" />](https://github.com/CraigBelinfante) | [<img src="https://avatars.githubusercontent.com/u/61711015?v=4" width = "150" />](https://github.com/IanFrench) | 
 |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CraigBelinfante)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/IanFrench)                             |                            
 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/craigbelinfante/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/iangfrench/)                 |  
-|                                                      [Kenneth Jones](https://github.com/kennethjones1991)                                                      |
+
+
+|                                                      [Kenneth Jones](https://github.com/kennethjones1991)                                                    |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://avatars.githubusercontent.com/u/10344338?v=4" width = "150" />](https://github.com/kennethjones1991) |
-|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kennethjones1991)                                |
-|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/kenneth-jones-19910906/)                | 
+| [<img src="https://avatars.githubusercontent.com/u/10344338?v=4" width = "150" />](https://github.com/kennethjones1991)|
+|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/KennethJones1991)                                |
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/kenneth-jones-19910906/)                
+|
 
