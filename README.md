@@ -12,7 +12,7 @@ Story Squad springs storytellers into action by partnering them up in creative c
 
 ## Main UI
 <p float="left">
-  <img src="https://github.com/Lambda-School-Labs/storysquad-ios/blob/main/Photos/storyPicture.jpg" width="300" />
+  <img src="https://github.com/Lambda-School-Labs/storysquad-ios/blob/main/Photos/storyPicture.jpg" width="500" />
 </p>
 
 ## UI in action
@@ -48,14 +48,14 @@ Story Squad springs storytellers into action by partnering them up in creative c
 
 |                                                      [Sammy Alvarado](https://github.com/SammyAlvarado)                                                      |                                                       [Bohdan Tkachenko](https://github.com/bohdan462)                                                     
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://avatars.githubusercontent.com/u/43729566?s=60&v=4" width = "150" />](https://github.com/SammyAlvarado) | [<img src="https://avatars.githubusercontent.com/u/30517042?v=4" width = "150" />](https://github.com/bohdan462) | 
+| [<img src="https://avatars.githubusercontent.com/u/43729566?v=4" width = "150" />](https://github.com/SammyAlvarado) | [<img src="https://avatars.githubusercontent.com/u/30517042?v=4" width = "150" />](https://github.com/bohdan462) | 
 |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/SammyAlvarado)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/bohdan462)                             |                            
 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/sammy-alvarado/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/bohdan-tkachenko-8283a3137/)                 |  
 
 
 
 #### Team B
-
+|                                                      [Craig Belinfante ](https://github.com/craigbelinfante)                                                      |                                                       [Ian French](https://github.com/IanFrench)                                                     
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: |
 | [<img src="https://avatars.githubusercontent.com/u/64510439?v=4" width = "150" />](https://github.com/CraigBelinfante) | [<img src="https://avatars.githubusercontent.com/u/61711015?v=4" width = "150" />](https://github.com/IanFrench) | 
 |                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CraigBelinfante)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/IanFrench)                             |                            
