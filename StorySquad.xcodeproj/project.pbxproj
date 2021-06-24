@@ -63,10 +63,14 @@
 		8607E9B1266AC659008316CD /* IntroLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607E9B0266AC659008316CD /* IntroLabel.swift */; };
 		862F64DD2657521F001E811E /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F64DC2657521F001E811E /* WriteVC.swift */; };
 		86F33B14266934F6005C58D4 /* DrawSubmitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F33B13266934F6005C58D4 /* DrawSubmitVC.swift */; };
+		CA7B433E2685489300893206 /* SubmissionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B433D2685489300893206 /* SubmissionAPI.swift */; };
+		CA7B4341268548B300893206 /* HeaderNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B4340268548B300893206 /* HeaderNames.swift */; };
+		CA7B4344268548DD00893206 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B4343268548DD00893206 /* NetworkingError.swift */; };
 		CA7BE516268543B500D5C52F /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7BE515268543B500D5C52F /* Page.swift */; };
 		CA7BE51A268543FA00D5C52F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7BE519268543FA00D5C52F /* Image.swift */; };
 		CA7BE51D2685447300D5C52F /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7BE51C2685447300D5C52F /* Submission.swift */; };
 		CA7BE520268545B800D5C52F /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7BE51F268545B800D5C52F /* Story.swift */; };
+		CA7BE5242685470300D5C52F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7BE5232685470300D5C52F /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,10 +132,14 @@
 		8607E9B0266AC659008316CD /* IntroLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroLabel.swift; sourceTree = "<group>"; };
 		862F64DC2657521F001E811E /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		86F33B13266934F6005C58D4 /* DrawSubmitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawSubmitVC.swift; sourceTree = "<group>"; };
+		CA7B433D2685489300893206 /* SubmissionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionAPI.swift; sourceTree = "<group>"; };
+		CA7B4340268548B300893206 /* HeaderNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNames.swift; sourceTree = "<group>"; };
+		CA7B4343268548DD00893206 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		CA7BE515268543B500D5C52F /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		CA7BE519268543FA00D5C52F /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		CA7BE51C2685447300D5C52F /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		CA7BE51F268545B800D5C52F /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		CA7BE5232685470300D5C52F /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +297,7 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CA7BE522268546A300D5C52F /* Networking */,
 				1AADE44C2656F930007F42C5 /* CustomUI */,
 				445676E826574E5400DC9662 /* CoreDataStack.swift */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
@@ -321,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */,
+				CA7B433D2685489300893206 /* SubmissionAPI.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -340,6 +350,16 @@
 				8607E996266A8B2B008316CD /* WriteSubmitCollectionViewCell.swift */,
 			);
 			path = "View Cell";
+			sourceTree = "<group>";
+		};
+		CA7BE522268546A300D5C52F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CA7BE5232685470300D5C52F /* HTTPMethod.swift */,
+				CA7B4340268548B300893206 /* HeaderNames.swift */,
+				CA7B4343268548DD00893206 /* NetworkingError.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,7 +478,9 @@
 			files = (
 				1AADE4552656FAD7007F42C5 /* LeaderboardVC.swift in Sources */,
 				8607E99E266A9AB5008316CD /* IconLabel.swift in Sources */,
+				CA7BE5242685470300D5C52F /* HTTPMethod.swift in Sources */,
 				1AADE46A2656FC93007F42C5 /* ChildRepresentation.swift in Sources */,
+				CA7B4344268548DD00893206 /* NetworkingError.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				8607E99B266A97B7008316CD /* TitleLabel.swift in Sources */,
 				86F33B14266934F6005C58D4 /* DrawSubmitVC.swift in Sources */,
@@ -482,6 +504,7 @@
 				8607E997266A8B2B008316CD /* WriteSubmitCollectionViewCell.swift in Sources */,
 				8607E9B1266AC659008316CD /* IntroLabel.swift in Sources */,
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
+				CA7B433E2685489300893206 /* SubmissionAPI.swift in Sources */,
 				1AADE4682656FC8C007F42C5 /* ChildInParentRepresentation.swift in Sources */,
 				1AADE4582656FB0E007F42C5 /* LoginVC.swift in Sources */,
 				445676E926574E5400DC9662 /* CoreDataStack.swift in Sources */,
@@ -491,6 +514,7 @@
 				1AADE4662656FC7B007F42C5 /* Child+Convenience.swift in Sources */,
 				8607E9A1266A9CEC008316CD /* IconTitleLabel.swift in Sources */,
 				862F64DD2657521F001E811E /* WriteVC.swift in Sources */,
+				CA7B4341268548B300893206 /* HeaderNames.swift in Sources */,
 				1AADE46C2656FC99007F42C5 /* Parent+Convenience.swift in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				8607E9932669C1D9008316CD /* WriteSubmitVC.swift in Sources */,
