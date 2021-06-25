@@ -21,6 +21,7 @@ class SubmissionsAPI {
     
     private init() {}
     
+    //MARK: - Returns the story for the given cohort.
     func getStoryWithCohortID(completion: @escaping(Result<String, NetworkingError>) ->Void ) {
         guard let childUser = childUser else {
             completion(Result.failure(NetworkingError.noChildUser))

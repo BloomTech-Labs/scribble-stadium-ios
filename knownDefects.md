@@ -7,14 +7,20 @@
 
 ### Reading View
 -  using mock data for writing text view
+- implement submissionAPI call to get story
 
 ### Writing Views 
 - user is able to use camera guides and edit scans and populate collectionView, but submit button does not send to backend/AWS 
 - login modal view may push() after save is pressed in document scanner
+- implement submissionAPI call on submittin pages
 
 ### Drawing Views
 -  allows user to capture images or load from photoLibrary, but the submit button does not send to backend/AWS 
+- implement submissionAPI call to send images
 
+### SubmissionAPI
+ - in order to set boolean values in child submission, form data body implementation in  resetSubmissionBoolTo method needs to be implememnted 
+ - create observer for child initializer 
 
 ## Team B:
 ### Core Data
