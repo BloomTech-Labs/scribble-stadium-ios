@@ -15,13 +15,72 @@ class SubmissionsAPI {
     
     var childUser: Child?
     var submission: Submission?
+    var story: Story?
+    
+    func getStoryWithCohortID(completion: @escaping(Result<String, NetworkingError>) ->Void ) {
+        guard let childUser = childUser else {
+            completion(Result.failure(NetworkingError.noChildUser))
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "storysquad-api.herokuapp.com"
+        urlComponents.path = "/story"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "childId", value: String(childUser.cohortID))
+        ]
+        
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if let error = error {
+                print("Error getting response: \(error)")
+                completion(.failure(.serverError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 200 {
+                    print("Good response")
+                    completion(.success("Got Story"))
+                    return
+                } else {
+                    print("Bad response, code: \(response.statusCode)")
+                    completion(.failure(.unexpectedStatusCode(response.statusCode)))
+                    return
+                }
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            let jsonData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            if let json = jsonData as? [String: Any] {
+                print(json)
+            }
+            
+            do {
+                let story = try JSONDecoder().decode(Story.self, from: data)
+                print(story)
+                self.story = story
+            } catch {
+                NSLog("Error decoding child story: \(error)")
+                completion(.failure(.badDecode))
+            }
+        }.resume()
+    }
     
     //MARK: - Queries the database for information for the given submission.
-    func getChildSubmissionFromDataBase(completion: @escaping(Result<Submission, NetworkingError>) -> Void) {
+    func getChildSubmissionFromDataBase(completion: @escaping(Result<String, NetworkingError>) -> Void) {
         
         guard let childUser = childUser,
-              let submission = submission else {
-            completion(Result.failure(NetworkingError.noBearer))
+              let story = story else {
+            completion(Result.failure(NetworkingError.noChildUser))
             return
         }
         
@@ -31,7 +90,7 @@ class SubmissionsAPI {
         urlComponents.path = "/submission"
         urlComponents.queryItems = [
             URLQueryItem(name: "childId", value: String(childUser.childID)),
-            URLQueryItem(name: "storyId", value: String(submission.storyId))
+            URLQueryItem(name: "storyId", value: String(story.id))
         ]
         
         var request = URLRequest(url: urlComponents.url!)
@@ -50,7 +109,7 @@ class SubmissionsAPI {
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 200 {
                     print("Good response")
-                    completion(.success(submission))
+                    completion(.success("Got submission"))
                     return
                 } else {
                     print("Bad response, code: \(response.statusCode)")
@@ -84,7 +143,7 @@ class SubmissionsAPI {
     func submitPages(pages: [UIImage], completion: @escaping(Result<String, NetworkingError>) -> Void) {
         
         guard let childUser = childUser else {
-            completion(Result.failure(NetworkingError.noBearer))
+            completion(Result.failure(NetworkingError.noChildUser))
             return
         }
         
