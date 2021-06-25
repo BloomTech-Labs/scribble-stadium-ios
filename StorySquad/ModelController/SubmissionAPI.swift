@@ -11,11 +11,15 @@ import UIKit
 
 class SubmissionsAPI {
     
+    static let submissionAPI = SubmissionsAPI()
+    
     private let baseURL = URL(string: "https://storysquad-api.herokuapp.com/")!
     
     var childUser: Child?
     var submission: Submission?
     var story: Story?
+    
+    private init() {}
     
     func getStoryWithCohortID(completion: @escaping(Result<String, NetworkingError>) ->Void ) {
         guard let childUser = childUser else {
@@ -68,6 +72,7 @@ class SubmissionsAPI {
                 let story = try JSONDecoder().decode(Story.self, from: data)
                 print(story)
                 self.story = story
+                completion(.success("Got a Story"))
             } catch {
                 NSLog("Error decoding child story: \(error)")
                 completion(.failure(.badDecode))
@@ -108,8 +113,7 @@ class SubmissionsAPI {
             
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 200 {
-                    print("Good response")
-                    completion(.success("Got submission"))
+                    completion(.success("God response"))
                     return
                 } else {
                     print("Bad response, code: \(response.statusCode)")
@@ -130,8 +134,8 @@ class SubmissionsAPI {
             
             do {
                 let submission = try JSONDecoder().decode(Submission.self, from: data)
-                print(submission)
                 self.submission = submission
+                completion(.success("Got a submission"))
             } catch {
                 NSLog("Error decoding child submission: \(error)")
                 completion(.failure(.badDecode))
@@ -181,7 +185,7 @@ class SubmissionsAPI {
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 204 {
                     print("Good response")
-                    completion(.success("Pages submitted"))
+                    completion(.success("God response"))
                     return
                 } else {
                     print("Bad response, code: \(response.statusCode)")
@@ -203,6 +207,7 @@ class SubmissionsAPI {
             do {
                 let page = try JSONDecoder().decode(Page.self, from: data)
                 print(page)
+                completion(.success("Got pages"))
             } catch {
                 NSLog("Error decoding page: \(error)")
                 completion(.failure(.badDecode))
@@ -252,7 +257,7 @@ class SubmissionsAPI {
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 201 {
                     print("Good response")
-                    completion(.success("Image submitted"))
+                    completion(.success("Good response"))
                     return
                 } else {
                     print("Bad response, code: \(response.statusCode)")
@@ -274,6 +279,7 @@ class SubmissionsAPI {
             do {
                 let image = try JSONDecoder().decode(Image.self, from: data)
                 print(image)
+                completion(.success("Got images"))
             } catch {
                 NSLog("Error decoding image: \(error)")
                 completion(.failure(.badDecode))
@@ -312,6 +318,7 @@ class SubmissionsAPI {
             do {
                 let submission = try JSONDecoder().decode([Submission].self, from: data)
                 print(submission)
+                completion(.success(submission))
             } catch {
                 NSLog("Error decoding submission: \(error)")
                 completion(.failure(.badDecode))
