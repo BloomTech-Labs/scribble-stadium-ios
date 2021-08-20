@@ -98,6 +98,7 @@ class LoginVC: UIViewController {
       button.setTitleColor(.darkGray, for: .normal)
       button.setTitle("First time? CREATE AN ACCOUNT HERE", for: .normal)
       button.backgroundColor = UIColor.clear
+    button.addTarget(self, action: #selector(SignUpButton), for: .touchUpInside)
       button.translatesAutoresizingMaskIntoConstraints = false
       return button
    }()
@@ -127,6 +128,13 @@ class LoginVC: UIViewController {
 //      navigationController?.pushViewController(rootVC, animated: true)
 //
    }//
+     
+    @objc func SignUpButton(){
+        let modal = SignUpVC()
+        present(modal, animated: true, completion: nil)
+        print("tapped")
+    }
+
     
     let profileController = ProfileController.shared
     
