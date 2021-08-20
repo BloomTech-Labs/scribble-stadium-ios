@@ -63,6 +63,8 @@
 		8607E9B1266AC659008316CD /* IntroLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607E9B0266AC659008316CD /* IntroLabel.swift */; };
 		862F64DD2657521F001E811E /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F64DC2657521F001E811E /* WriteVC.swift */; };
 		86F33B14266934F6005C58D4 /* DrawSubmitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F33B13266934F6005C58D4 /* DrawSubmitVC.swift */; };
+		AB3AC4D326BA112100C48BC0 /* ScribbleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AC4D226BA112100C48BC0 /* ScribbleController.swift */; };
+		AB3AC4D526BA124400C48BC0 /* Scribble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AC4D426BA124400C48BC0 /* Scribble.swift */; };
 		CA7B433E2685489300893206 /* SubmissionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B433D2685489300893206 /* SubmissionAPI.swift */; };
 		CA7B4341268548B300893206 /* HeaderNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B4340268548B300893206 /* HeaderNames.swift */; };
 		CA7B4344268548DD00893206 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B4343268548DD00893206 /* NetworkingError.swift */; };
@@ -132,6 +134,8 @@
 		8607E9B0266AC659008316CD /* IntroLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroLabel.swift; sourceTree = "<group>"; };
 		862F64DC2657521F001E811E /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		86F33B13266934F6005C58D4 /* DrawSubmitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawSubmitVC.swift; sourceTree = "<group>"; };
+		AB3AC4D226BA112100C48BC0 /* ScribbleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribbleController.swift; sourceTree = "<group>"; };
+		AB3AC4D426BA124400C48BC0 /* Scribble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scribble.swift; sourceTree = "<group>"; };
 		CA7B433D2685489300893206 /* SubmissionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionAPI.swift; sourceTree = "<group>"; };
 		CA7B4340268548B300893206 /* HeaderNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNames.swift; sourceTree = "<group>"; };
 		CA7B4343268548DD00893206 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 				CA7BE519268543FA00D5C52F /* Image.swift */,
 				CA7BE51C2685447300D5C52F /* Submission.swift */,
 				CA7BE51F268545B800D5C52F /* Story.swift */,
+				AB3AC4D426BA124400C48BC0 /* Scribble.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 			children = (
 				46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */,
 				CA7B433D2685489300893206 /* SubmissionAPI.swift */,
+				AB3AC4D226BA112100C48BC0 /* ScribbleController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				CA7BE5242685470300D5C52F /* HTTPMethod.swift in Sources */,
 				1AADE46A2656FC93007F42C5 /* ChildRepresentation.swift in Sources */,
 				CA7B4344268548DD00893206 /* NetworkingError.swift in Sources */,
+				AB3AC4D526BA124400C48BC0 /* Scribble.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				8607E99B266A97B7008316CD /* TitleLabel.swift in Sources */,
 				86F33B14266934F6005C58D4 /* DrawSubmitVC.swift in Sources */,
@@ -516,6 +523,7 @@
 				862F64DD2657521F001E811E /* WriteVC.swift in Sources */,
 				CA7B4341268548B300893206 /* HeaderNames.swift in Sources */,
 				1AADE46C2656FC99007F42C5 /* Parent+Convenience.swift in Sources */,
+				AB3AC4D326BA112100C48BC0 /* ScribbleController.swift in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				8607E9932669C1D9008316CD /* WriteSubmitVC.swift in Sources */,
 				1AADE45E2656FB53007F42C5 /* SettingsVC.swift in Sources */,
@@ -589,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -644,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -659,7 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2395UCK67;
+				DEVELOPMENT_TEAM = 46XAGWCJPW;
 				INFOPLIST_FILE = "$(SRCROOT)/StorySquad/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -679,7 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2395UCK67;
+				DEVELOPMENT_TEAM = 46XAGWCJPW;
 				INFOPLIST_FILE = "$(SRCROOT)/StorySquad/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
