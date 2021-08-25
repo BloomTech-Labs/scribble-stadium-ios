@@ -1,0 +1,5 @@
+My part to this big project was that I added the sign up page for the application. This application is meant to help young kids in their educational career, enhancing their vocabulary through a fun and meaningful method. This application requires the student and the parents to sign up for a account and I was responsible for creating that page for the mobile application side.
+
+What I worked on basically allows parents to create an account for their kids or students to be able to use the application. I also linked that page to the main page on the application. I got to admit though, however, I couldn't finish the user interface for the signup page. The next cohort will be responsible for that.
+
+I created a new signup file, in which I design the layout for the signup page. I also linked that file to the main page which is the Login page. I was building this application through Xcode, written in Swift. I also used some objective-c to link the page.
