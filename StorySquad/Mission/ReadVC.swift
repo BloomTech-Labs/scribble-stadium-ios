@@ -69,7 +69,7 @@ class ReadVC: UIViewController {
    let chapterLabel: UILabel = {
       let label = UILabel()
       label.textColor = .white
-      label.text = " YOUR MISSION "
+      label.text = " CHAPTER 1 "
       label.font = UIFont(name: "Bangers", size: 24.0)
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
