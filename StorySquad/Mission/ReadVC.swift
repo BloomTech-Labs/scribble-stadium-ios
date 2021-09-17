@@ -9,18 +9,6 @@
 import UIKit
 
 class ReadVC: UIViewController {
-    
-    private var imageView: UIImageView!
-    
-    var scribble: Scribble! {
-        didSet {
-            updateViews()
-        }
-    }
-    
-    private func updateViews() {
-        imageView.image = scribble.image
-    }
    
    // Outlets
    let topView = UIView()
@@ -87,30 +75,20 @@ class ReadVC: UIViewController {
       return label
    }()
     
-    let imageWidth:CGFloat = 275
-    let imageHeight:CGFloat = 147
-    var yPosition:CGFloat = 0
-    var scrollViewContentSize:CGFloat = 0;
-    
-    
-    
-    
+   let introTextView: UILabel = {
+      let textView = UILabel()
+      textView.textColor = .white
+      textView.font = UIFont(name: "Open Sans", size: 16)
+      textView.backgroundColor = UIColor.tabbarColor
+      textView.textAlignment = NSTextAlignment.justified
+ //     textView.isEditable = false
+      textView.lineBreakMode = NSLineBreakMode.byWordWrapping
+      textView.numberOfLines = 0
 
-   
-//   let introTextView: UILabel = {
-//      let textView = UILabel()
-//      textView.textColor = .white
-//      textView.font = UIFont(name: "Open Sans", size: 16)
-//      textView.backgroundColor = UIColor.tabbarColor
-//      textView.textAlignment = NSTextAlignment.justified
-// //     textView.isEditable = false
-//      textView.lineBreakMode = NSLineBreakMode.byWordWrapping
-//      textView.numberOfLines = 0
-//
-//
-//      textView.text = "In the coral reefs beneath the surface of the ocean, every kid was obsessed with the sport of flipperball. It didn’t matter your species—dolphin, marlin, electric eel. Once school got out for the summer, everyone suited up for their Little League team and spent the season trying to hammer the ball into the back of the net. From the sidelines, dads would brag to anyone who would listen, “Did you see that move? My kid’s gonna make it to the pros and sign a contract for a million clams like Scooter Messy. Just you watch.” This summer pastime wasn’t playing out in local pockets here or there, along this livestream or that. No, the sport’s popularity was surging in reefs underneath every archipelago — from Hawaii to Fiji, Guam to Tahiti and the gobs of tropics in between. The surface temperature of the Pacific was even said to rise an entire degree from the collective outbreak of flipperball fever. \nEven the bottom feeders in the basement of the ocean weren’t immune, although the data from down here was sketchy, as 20,000 leagues was as far down as a reliable signal would go. Any deeper and guppies would start yelling into their devices, “Hello? HELL-O? Mom, can you hear me?” before refreshing their screens and saying, “Zero bars, really? C’mon, c’mon.” Down here, social media didn’t update. Texts wouldn’t transmit. Friends closer to the surface wondered why they were being ghosted. When you toggled over to the Goggle Earth app, the underwater map would look all pixelated. You’d need a real compass and an old school paper map to have any chance of navigating, unless of course you grew up around these parts and knew the lay of the sand like the back of your fin."
-//      return textView
-//   }()
+
+      textView.text = "In the coral reefs beneath the surface of the ocean, every kid was obsessed with the sport of flipperball. It didn’t matter your species—dolphin, marlin, electric eel. Once school got out for the summer, everyone suited up for their Little League team and spent the season trying to hammer the ball into the back of the net. From the sidelines, dads would brag to anyone who would listen, “Did you see that move? My kid’s gonna make it to the pros and sign a contract for a million clams like Scooter Messy. Just you watch.” This summer pastime wasn’t playing out in local pockets here or there, along this livestream or that. No, the sport’s popularity was surging in reefs underneath every archipelago — from Hawaii to Fiji, Guam to Tahiti and the gobs of tropics in between. The surface temperature of the Pacific was even said to rise an entire degree from the collective outbreak of flipperball fever. \nEven the bottom feeders in the basement of the ocean weren’t immune, although the data from down here was sketchy, as 20,000 leagues was as far down as a reliable signal would go. Any deeper and guppies would start yelling into their devices, “Hello? HELL-O? Mom, can you hear me?” before refreshing their screens and saying, “Zero bars, really? C’mon, c’mon.” Down here, social media didn’t update. Texts wouldn’t transmit. Friends closer to the surface wondered why they were being ghosted. When you toggled over to the Goggle Earth app, the underwater map would look all pixelated. You’d need a real compass and an old school paper map to have any chance of navigating, unless of course you grew up around these parts and knew the lay of the sand like the back of your fin."
+      return textView
+   }()
    
    let awesomeButton: UIButton = {
       let button = ActionButton(title: "I'm awesome, I'm done reading!")
