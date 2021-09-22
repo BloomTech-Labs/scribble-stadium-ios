@@ -45,7 +45,7 @@ class ReadVC: UIViewController {
     
     //MARK: - UICollectionView and elements
     // All the logic for the image slider that shows the story
-    let storyCollectionView = UICollectionView()
+    let scribbleCollectionView = UICollectionView()
     let images = [
         UIImage(named: "1.jpeg"),
         UIImage(named: "2.jpeg"),
@@ -144,7 +144,8 @@ class ReadVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.tabbarColor
         self.navigationItem.title = "Read"
-        
+        scribbleCollectionView.delegate = self
+        scribbleCollectionView.dataSource = self
         configureUI()
     }
     
@@ -352,6 +353,10 @@ class ReadVC: UIViewController {
     }//
     
     
+    func configureCollectionView() {
+        scribbleCollectionView.register(ScribbleCollectionViewCell.self, forCellWithReuseIdentifier: "ScribbleCell")
+    }
+    
     
 }// Class
 
@@ -363,8 +368,8 @@ extension ReadVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
-        // Configure cell here
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScribbleCell", for: indexPath) as! ScribbleCollectionViewCell
+        cell.imageView.image = images[indexPath.item]
         return cell
     }
     
